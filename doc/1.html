@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本経済報告</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        body, html { margin: 0; padding: 0; font-family: "Meiryo", "Yu Gothic", sans-serif; background-color: #f4f4f4; }
+        #ppt-container {
+            width: 1600px; height: 900px; /* 16:9 aspect ratio */
+            margin: 20px auto; background-color: #fff; padding: 20px 30px; box-sizing: border-box;
+            display: flex; flex-direction: column; box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1 { color: #005c35; font-size: 28px; margin: 0 0 15px 0; border-bottom: 3px solid #005c35; padding-bottom: 10px; }
+        .top-summary { font-size: 16px; line-height: 1.5; color: #333; margin-bottom: 20px; background-color: #f9f9f9; padding: 15px; border-left: 5px solid #85c441; }
+        .main-content { display: flex; flex: 1; gap: 20px; overflow: hidden; }
+        .column { display: flex; flex-direction: column; }
+        .left-col { width: 55%; }
+        .right-col { width: 45%; }
+        .section-title { background-color: #005c35; color: white; font-size: 18px; padding: 8px 15px; margin-bottom: 10px; font-weight: bold; }
+        .chart-container { flex: 1; min-height: 0; /* Important for flex sizing */ margin-bottom: 10px; border: 1px solid #ddd; padding: 10px; position: relative; }
+        .chart-title { font-size: 14px; font-weight: bold; margin-bottom: 5px; color: #333; text-align: center; }
+        .chart-div { width: 100%; height: calc(100% - 25px); }
+        .footer { font-size: 12px; color: #666; margin-top: auto; padding-top: 10px; border-top: 1px solid #eee; }
+        /* Annotation Style */
+        .red-annotation { color: #e74c3c; font-weight: bold; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div id="ppt-container">
+        <h1>日本経済の現況 更なる成長に向けて供給力強化が必要</h1>
+        <div class="top-summary">
+            我が国経済は、米国通商政策等による押し影響を受けながらも、堅調な企業業績を背景とした設備投資や賃上げを原動力とした民間消費の増加等を支えに着実に成長しています。コロナ禍に拡大した需給ギャップは縮小し、需要不足から供給力不足にシフトしつつあります。人手不足が深刻化する中、今後の持続的成長に向けては、需要の一層の拡大に加えて、資本投入の加速等を通じた供給力の強化が必要となっています。
+        </div>
+        <div class="main-content">
+            <div class="column left-col">
+                <div class="section-title">日本経済の現況</div>
+                <div class="chart-container" style="flex: 1.2;">
+                    <div class="chart-title">① 名目GDP（2015年からの変化額）</div>
+                    <div id="chart1" class="chart-div"></div>
+                </div>
+                <div class="chart-container" style="flex: 1;">
+                    <div class="chart-title">② 上場企業業績（会社予想）</div>
+                    <div id="chart2" class="chart-div"></div>
+                </div>
+                <div class="chart-container" style="flex: 1;">
+                    <div class="chart-title">③ 賃金（2020年=100）</div>
+                    <div id="chart3" class="chart-div"></div>
+                </div>
+            </div>
+            <div class="column right-col">
+                <div class="section-title">GDPギャップと労働投入量</div>
+                <div class="chart-container" style="flex: 1.2;">
+                    <div class="chart-title">① GDPギャップ</div>
+                    <div id="chart4" class="chart-div"></div>
+                </div>
+                <div class="chart-container" style="flex: 1;">
+                    <div class="chart-title">② 労働投入量</div>
+                    <div id="chart5" class="chart-div"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            出所：内閣府国民経済計算、上場企業有価証券報告書および決算短信、厚生労働省毎月勤労統計、総務省『消費者物価指数』を基に作成
+        </div>
+    </div>
+
+<script>
+// --- Data Generation (Simulated based on trends) ---
+const years = ['16', '17', '18', '19', '20', '21', '22', '23', '24E', '25E'];
+
+// Chart 1 Data: Nominal GDP Change (Trillion Yen, stacked)
+const dataC1 = {
+    '民間消費': [5, 8, 10, 12, -15, -5, 10, 25, 35, 45],
+    '企業設備': [2, 5, 8, 10, -5, 0, 5, 15, 22, 30],
+    '公的需要': [3, 4, 5, 6, 15, 18, 20, 22, 23, 24],
+    '純輸出': [1, 3, 2, -1, -3, 2, -5, -2, 5, 8],
+    'その他': [1, 1, 2, 1, -1, 1, 2, 3, 3, 4],
+    '合計(折線)': [12, 21, 27, 28, -9, 16, 32, 63, 88, 111]
+};
+
+// Chart 2 Data: Corporate Performance (Trillion Yen, Dual Axis)
+const dataC2 = {
+    '売上高(左)': [500, 520, 540, 530, 480, 510, 560, 600, 630, 650],
+    '営業利益(右)': [30, 35, 38, 34, 20, 32, 45, 55, 62, 68]
+};
+
+// Chart 3 Data: Wages (Index 2020=100)
+const dataC3 = {
+    '名目賃金': [95, 96, 97.5, 99, 100, 100.5, 102, 105, 108, 111],
+    '実質賃金': [98, 98.5, 99, 99.5, 100, 99.8, 98, 97, 97.5, 98]
+};
+
+// Chart 4 Data: GDP Gap (Trillion Yen, Area + Line)
+// Potential as Area baseline, Real as Line fluctuations
+const dataC4 = {
+    '潜在GDP(=供給)': [530, 535, 540, 545, 550, 553, 556, 560, 564, 568],
+    '実質GDP(=需要)': [525, 532, 538, 540, 515, 535, 550, 558, 566, 572]
+};
+
+// Chart 5 Data: Labor Input (Dual Axis)
+const dataC5 = {
+    '就業者数寄与度(左,棒)': [0.5, 0.8, 1.0, 0.7, -1.5, 0.2, 0.6, 0.9, 0.8, 0.7],
+    '労働力投入量前年比(左,折線)': [0.3, 0.6, 0.8, 0.5, -2.0, 0.5, 0.9, 1.2, 1.0, 0.9],
+    '労働参加率(右,折線,%)': [59.5, 60.0, 60.8, 61.5, 61.2, 61.8, 62.3, 62.8, 63.1, 63.3]
+};
+
+
+// --- ECharts Configuration ---
+// Shared Color Palette (Green, Yellow, Gray tones)
+const colors = ['#85c441', '#f39c12', '#95a5a6', '#3498db', '#e67e22', '#005c35'];
+
+// Chart 1: Nominal GDP (Stacked Bar + Line)
+const chart1 = echarts.init(document.getElementById('chart1'));
+const option1 = {
+    color: colors,
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    legend: { data: ['民間消費', '企業設備', '公的需要', '純輸出', 'その他', '合計'], bottom: 0, itemWidth: 10, itemHeight: 10, textStyle: {fontSize: 10} },
+    grid: { left: '3%', right: '4%', bottom: '15%', top: '15%', containLabel: true },
+    xAxis: { type: 'category', data: years, axisTick: { alignWithLabel: true } },
+    yAxis: { type: 'value', name: '(兆円)' },
+    series: [
+        { name: 'その他', type: 'bar', stack: 'total', data: dataC1['その他'] },
+        { name: '純輸出', type: 'bar', stack: 'total', data: dataC1['純輸出'] },
+        { name: '公的需要', type: 'bar', stack: 'total', data: dataC1['公的需要'] },
+        { name: '企業設備', type: 'bar', stack: 'total', data: dataC1['企業設備'] },
+        { name: '民間消費', type: 'bar', stack: 'total', data: dataC1['民間消費'] },
+        { name: '合計', type: 'line', data: dataC1['合計(折線)'], itemStyle: { color: '#005c35' }, lineStyle: { width: 3 } }
+    ],
+    graphic: [{
+        type: 'text',
+        left: '40%', top: '25%',
+        style: { text: 'コロナ禍以降、\n着実に成長', fill: '#e74c3c', font: 'bold 14px "Meiryo"' }
+    }]
+};
+chart1.setOption(option1);
+
+// Chart 2: Corporate Performance (Dual Axis Bar + Line)
+const chart2 = echarts.init(document.getElementById('chart2'));
+const option2 = {
+    tooltip: { trigger: 'axis' },
+    legend: { data: ['売上高', '営業利益'], bottom: 0, itemWidth: 10, itemHeight: 10, textStyle: {fontSize: 10} },
+    grid: { left: '3%', right: '3%', bottom: '15%', top: '20%', containLabel: true },
+    xAxis: { type: 'category', data: years },
+    yAxis: [
+        { type: 'value', name: '売上高(左,兆円)', position: 'left', axisLine: { show: true, lineStyle: { color: colors[3] } }, splitLine: {show: false} },
+        { type: 'value', name: '営業利益(右,兆円)', position: 'right', axisLine: { show: true, lineStyle: { color: colors[1] } } }
+    ],
+    series: [
+        { name: '売上高', type: 'bar', data: dataC2['売上高(左)'], itemStyle: { color: colors[3] } },
+        { name: '営業利益', type: 'line', yAxisIndex: 1, data: dataC2['営業利益(右)'], itemStyle: { color: colors[1] }, lineStyle: { width: 3 } }
+    ],
+    graphic: [{
+        type: 'text',
+        right: '15%', top: '30%',
+        style: { text: '堅調な企業業績', fill: '#e74c3c', font: 'bold 14px "Meiryo"' }
+    }]
+};
+chart2.setOption(option2);
+
+// Chart 3: Wages (Dual Line)
+const chart3 = echarts.init(document.getElementById('chart3'));
+const option3 = {
+    tooltip: { trigger: 'axis' },
+    legend: { data: ['名目', '実質'], bottom: 0, itemWidth: 10, itemHeight: 10, textStyle: {fontSize: 10} },
+    grid: { left: '3%', right: '4%', bottom: '15%', top: '20%', containLabel: true },
+    xAxis: { type: 'category', data: years, boundaryGap: false },
+    yAxis: { type: 'value', name: '(2020年=100)', min: 90, max: 115 },
+    series: [
+        { name: '名目', type: 'line', data: dataC3['名目賃金'], itemStyle: { color: colors[3] }, lineStyle: { width: 3 } },
+        { name: '実質', type: 'line', data: dataC3['実質賃金'], itemStyle: { color: colors[2] }, lineStyle: { width: 3, type: 'dashed' } }
+    ],
+    graphic: [{
+        type: 'text',
+        right: '5%', bottom: '35%',
+        style: { text: '実質賃金は低調', fill: '#e74c3c', font: 'bold 14px "Meiryo"' }
+    }]
+};
+chart3.setOption(option3);
+
+// Chart 4: GDP Gap (Area + Line)
+const chart4 = echarts.init(document.getElementById('chart4'));
+const option4 = {
+    tooltip: { trigger: 'axis' },
+    legend: { data: ['潜在GDP(=供給)', '実質GDP(=需要)'], bottom: 0, itemWidth: 10, itemHeight: 10, textStyle: {fontSize: 10} },
+    grid: { left: '3%', right: '4%', bottom: '15%', top: '15%', containLabel: true },
+    xAxis: { type: 'category', data: years, boundaryGap: false },
+    yAxis: { type: 'value', name: '(兆円)', min: 500, max: 580 },
+    series: [
+        {
+            name: '潜在GDP(=供給)', type: 'line', data: dataC4['潜在GDP(=供給)'],
+            itemStyle: { color: colors[2] }, lineStyle: { width: 0 }, symbol: 'none',
+            areaStyle: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{offset: 0, color: '#ccc'}, {offset: 1, color: '#eee'}]) }
+        },
+        { name: '実質GDP(=需要)', type: 'line', data: dataC4['実質GDP(=需要)'], itemStyle: { color: colors[0] }, lineStyle: { width: 4 } }
+    ],
+    graphic: [{
+        type: 'text',
+        left: 'center', top: '45%',
+        style: { text: '需要不足→供給不足にシフト', fill: '#e74c3c', font: 'bold 14px "Meiryo"', textAlign: 'center' }
+    }]
+};
+chart4.setOption(option4);
+
+// Chart 5: Labor Input (Dual Axis Mixed)
+const chart5 = echarts.init(document.getElementById('chart5'));
+const option5 = {
+    tooltip: { trigger: 'axis' },
+    legend: { data: ['就業者数寄与度', '労働力投入量前年比', '労働参加率'], bottom: 0, itemWidth: 10, itemHeight: 10, textStyle: {fontSize: 9} },
+    grid: { left: '3%', right: '3%', bottom: '15%', top: '20%', containLabel: true },
+    xAxis: { type: 'category', data: years },
+    yAxis: [
+        { type: 'value', name: '前年比/寄与度(%)', position: 'left', axisLine: { show: true }, splitLine: {show: false} },
+        { type: 'value', name: '労働参加率(%)', position: 'right', axisLine: { show: true }, min: 58, max: 65 }
+    ],
+    series: [
+        { name: '就業者数寄与度', type: 'bar', data: dataC5['就業者数寄与度(左,棒)'], itemStyle: { color: colors[3] } },
+        { name: '労働力投入量前年比', type: 'line', data: dataC5['労働力投入量前年比(左,折線)'], itemStyle: { color: colors[0] }, lineStyle: { width: 3 } },
+        { name: '労働参加率', type: 'line', yAxisIndex: 1, data: dataC5['労働参加率(右,折線,%)'], itemStyle: { color: colors[4] }, lineStyle: { width: 2, type: 'dashed' } }
+    ]
+};
+chart5.setOption(option5);
+
+// Responsive resizing
+window.addEventListener('resize', function() {
+    chart1.resize(); chart2.resize(); chart3.resize(); chart4.resize(); chart5.resize();
+});
+</script>
+</body>
+</html>

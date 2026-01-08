@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025年の回顧と2026年の展望 | 三井住友銀行</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:wght@400;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* カラーシステム */
+            --bg-primary: #F5F1E8;
+            --bg-secondary: #EDE7DC;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #4A4A4A;
+            --text-tertiary: #7A7A7A;
+            --accent: #2C2C2C;
+            --border: #D4CEC0;
+            --shadow: rgba(26, 26, 26, 0.08);
+            
+            /* タイポグラフィ */
+            --font-display: 'Playfair Display', serif;
+            --font-serif: 'Noto Serif JP', serif;
+            --font-sans: 'Noto Sans JP', sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+            
+            /* スペーシング */
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 32px;
+            --space-lg: 64px;
+            --space-xl: 96px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-serif);
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            line-height: 1.8;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+        
+        /* 紙のテクスチャ背景 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(26, 26, 26, 0.01) 2px,
+                    rgba(26, 26, 26, 0.01) 4px
+                );
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        /* ナビゲーションバー */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(245, 241, 232, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: var(--space-sm) var(--space-md);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: var(--space-md);
+            list-style: none;
+        }
+        
+        .nav-links a {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 400;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+        
+        /* メインコンテナ */
+        .container {
+            position: relative;
+            z-index: 2;
+            padding-top: 80px;
+        }
+        
+        .section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-md);
+        }
+        
+        /* ヒーローセクション */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: var(--space-xl) var(--space-md);
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 120px;
+            background: linear-gradient(to bottom, var(--border), transparent);
+        }
+        
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 86px);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--space-md);
+            letter-spacing: -1px;
+        }
+        
+        .hero-subtitle {
+            font-family: var(--font-serif);
+            font-size: clamp(20px, 3vw, 28px);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+            font-weight: 400;
+        }
+        
+        .hero-meta {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-tertiary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        /* セクションタイトル */
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 600;
+            margin-bottom: var(--space-lg);
+            text-align: center;
+            position: relative;
+            padding-bottom: var(--space-md);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .section-subtitle {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: var(--space-lg);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* カードシステム */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: var(--space-md);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px var(--shadow);
+        }
+        
+        /* グリッドシステム */
+        .grid {
+            display: grid;
+            gap: var(--space-md);
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+        
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        
+        /* タイムライン */
+        .timeline {
+            position: relative;
+            padding-left: var(--space-lg);
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -73px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--bg-primary);
+        }
+        
+        .timeline-date {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .timeline-title {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .timeline-desc {
+            font-family: var(--font-sans);
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        /* フォーカスカード */
+        .focus-card {
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent);
+            padding: var(--space-md);
+            margin-bottom: var(--space-md);
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        
+        .focus-number {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .focus-title {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+        }
+        
+        .focus-content {
+            font-family: var(--font-sans);
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        /* 業界カード */
+        .industry-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: var(--space-md);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px var(--shadow);
+            border-color: var(--accent);
+        }
+        
+        .industry-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-mono);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .industry-name {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .industry-section {
+            margin-bottom: var(--space-sm);
+        }
+        
+        .industry-label {
+            font-family: var(--font-sans);
+            font-size: 12px;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .industry-text {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* 統計カード */
+        .stat-card {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: var(--space-md);
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-family: var(--font-mono);
+            font-size: 42px;
+            font-weight: 600;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .stat-label {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        
+        /* リストスタイル */
+        .styled-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .styled-list li {
+            font-family: var(--font-sans);
+            font-size: 15px;
+            color: var(--text-secondary);
+            padding-left: var(--space-md);
+            margin-bottom: var(--space-sm);
+            position: relative;
+        }
+        
+        .styled-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        /* フッター */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: var(--space-lg) var(--space-md);
+            text-align: center;
+        }
+        
+        .footer-text {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-tertiary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .section {
+                padding: var(--space-lg) var(--space-sm);
+            }
+            
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                padding-left: var(--space-md);
+            }
+            
+            .timeline-item::before {
+                left: -41px;
+            }
+        }
+        
+        /* アニメーション */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ユーティリティ */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-sm { margin-bottom: var(--space-sm); }
+        .mb-md { margin-bottom: var(--space-md); }
+        .mb-lg { margin-bottom: var(--space-lg); }
+        
+        .mt-sm { margin-top: var(--space-sm); }
+        .mt-md { margin-top: var(--space-md); }
+        .mt-lg { margin-top: var(--space-lg); }
+        
+        strong {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- ナビゲーションバー -->
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="nav-logo">SMBC Report</div>
+            <ul class="nav-links">
+                <li><a href="#summary">エグゼクティブ・サマリー</a></li>
+                <li><a href="#review2025">2025年回顧</a></li>
+                <li><a href="#outlook2026">2026年展望</a></li>
+                <li><a href="#economy">経済・政治環境</a></li>
+                <li><a href="#industries">業界分析</a></li>
+                <li><a href="#survey">調査インサイト</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- ヒーローセクション -->
+        <section class="hero">
+            <h1 class="hero-title">2025年の回顧と<br>2026年の展望</h1>
+            <p class="hero-subtitle">Review of 2025 and Outlook for 2026</p>
+            <div class="hero-meta">
+                株式会社三井住友銀行 · CA本部 企業調査部 · 2025年12月
+            </div>
+        </section>
+
+        <!-- エグゼクティブ・サマリー -->
+        <section id="summary" class="section fade-in">
+            <h2 class="section-title">エグゼクティブ・サマリー</h2>
+            <p class="section-subtitle">
+                2025年は、トランプ大統領の就任と関税発動を契機に、世界経済と政治情勢が大きく揺れ動く一年となりました。
+                日本国内では、日経平均株価の最高値更新や高市新政権の発足が象徴的な出来事となりました。
+            </p>
+            
+            <div class="grid grid-4 mb-lg">
+                <div class="stat-card fade-in">
+                    <div class="stat-value">52,000</div>
+                    <div class="stat-label">日経平均株価 最高値 (円)</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-value">5.39%</div>
+                    <div class="stat-label">春闘賃上げ率</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-value">23%</div>
+                    <div class="stat-label">世界EV販売比率</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-value">439</div>
+                    <div class="stat-label">SMBCアンケート有効回答</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2025年回顧 -->
+        <section id="review2025" class="section fade-in">
+            <h2 class="section-title">2025年回顧</h2>
+            
+            <div class="mb-lg">
+                <h3 class="section-subtitle" style="font-size: 24px; margin-bottom: var(--space-md);">重要イベントタイムライン</h3>
+                <div class="timeline">
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-date">2025年1月</div>
+                        <div class="timeline-title">トランプ氏が第47代米国大統領に就任</div>
+                        <div class="timeline-desc">「アメリカ・ファースト」通商政策を推進、日銀は政策金利を約0.5%へ引き上げ</div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-date">2025年4月</div>
+                        <div class="timeline-title">大阪・関西万博開幕 & トランプ大統領が大規模関税措置を発表</div>
+                        <div class="timeline-desc">万博には160の国と地域が参加、関税措置が世界貿易の枠組みに影響</div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-date">2025年7月</div>
+                        <div class="timeline-title">日米関税合意 & 春闘賃上げ率が34年ぶり高水準</div>
+                        <div class="timeline-desc">賃上げ率は5.25%に達し、関税上限は15%に設定</div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-date">2025年10月</div>
+                        <div class="timeline-title">高市早苗氏が首相に就任 & 日経平均株価が5万円を突破</div>
+                        <div class="timeline-desc">日本初の女性首相誕生、株価は史上最高値の52,000円を記録</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="section-subtitle" style="font-size: 24px; margin-bottom: var(--space-md);">2025年 10大トピックス</h3>
+                <div class="grid grid-2">
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">01</div>
+                        <div class="focus-title">トランプ大統領就任と関税発動</div>
+                        <div class="focus-content">「アメリカ・ファースト」通商政策を推進。4月に大規模な関税措置を発表、7月に日米で関税および対米投資に関する合意に至る</div>
+                    </div>
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">02</div>
+                        <div class="focus-title">高市新政権発足</div>
+                        <div class="focus-content">日本初の女性首相。政策は安全保障、成長と財政規律のバランスに重点を置き、DEI（多様性・公平性・包括性）と女性登用を推進</div>
+                    </div>
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">03</div>
+                        <div class="focus-title">日経平均株価の最高値更新</div>
+                        <div class="focus-content">年初の39,000円からスタートし、10月には52,000円に到達。AI関連銘柄が主な牽引役となる</div>
+                    </div>
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">04</div>
+                        <div class="focus-title">大阪・関西万博</div>
+                        <div class="focus-content">4月から10月にかけて開催。160の国と地域が参加し、「いのち輝く未来社会のデザイン」をテーマに掲げる</div>
+                    </div>
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">05</div>
+                        <div class="focus-title">サイバー攻撃の多発</div>
+                        <div class="focus-content">RaaS（Ransomware as a Service）モデルの普及により、企業や個人への攻撃事例が急増。サイバー詐欺被害額は過去最高を更新</div>
+                    </div>
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">06</div>
+                        <div class="focus-title">賃上げと物価高騰</div>
+                        <div class="focus-content">春闘賃上げ率は5.39%（1991年以来の高水準）となるも、物価上昇が名目賃金の伸びを上回り、実質賃金は停滞</div>
+                    </div>
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">07</div>
+                        <div class="focus-title">米中・米露首脳会談</div>
+                        <div class="focus-content">米中は相互に関税を引き下げ、米露は継続的な対話を約束</div>
+                    </div>
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">08</div>
+                        <div class="focus-title">Windows 10 サポート終了</div>
+                        <div class="focus-content">10月にサポート終了、個人および企業のOS移行を促進</div>
+                    </div>
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">09</div>
+                        <div class="focus-title">世界的な軍事支出の拡大</div>
+                        <div class="focus-content">ロシア・ウクライナ戦争の長期化に加え、トランプ氏が各国に国防費増額を圧力。NATOは防衛支出目標を調整</div>
+                    </div>
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">10</div>
+                        <div class="focus-title">G20サミット (南アフリカ)</div>
+                        <div class="focus-content">アフリカ初の開催となり、アフリカの国際的な役割を強調する一方、国際社会の分断も浮き彫りに</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2026年展望 -->
+        <section id="outlook2026" class="section fade-in">
+            <h2 class="section-title">2026年展望</h2>
+            <p class="section-subtitle">
+                2026年は、米国中間選挙が世界経済政策の方向性を左右し、日本では高市政権の政策具体化が国内外の投資を牽引すると予想されます。
+            </p>
+            
+            <div class="grid grid-2">
+                <div class="focus-card fade-in">
+                    <div class="focus-number">01</div>
+                    <div class="focus-title">米国中間選挙</div>
+                    <div class="focus-content">11月に連邦上下両院の一部議席改選。トランプ政権の施政運営や対米投資に影響を与える</div>
+                </div>
+                <div class="focus-card fade-in">
+                    <div class="focus-number">02</div>
+                    <div class="focus-title">ミラノ・コルティナダンペッツォ冬季五輪</div>
+                    <div class="focus-content">初の複数都市開催。既存施設の活用で費用を抑制しつつ、イタリアの観光と交通を活性化</div>
+                </div>
+                <div class="focus-card fade-in">
+                    <div class="focus-number">03</div>
+                    <div class="focus-title">FIFAワールドカップ</div>
+                    <div class="focus-content">米国・カナダ・メキシコの3カ国共催。48チーム104試合へと規模を拡大し、史上最大規模に</div>
+                </div>
+                <div class="focus-card fade-in">
+                    <div class="focus-number">04</div>
+                    <div class="focus-title">日本成長戦略会議</div>
+                    <div class="focus-content">6月に17の重点分野（AI、造船など）における官民投資計画と成長戦略を取りまとめ</div>
+                </div>
+                <div class="focus-card fade-in">
+                    <div class="focus-number">05</div>
+                    <div class="focus-title">COP31・NDC履行検証</div>
+                    <div class="focus-content">各国の排出削減目標の具体化と実行状況に焦点</div>
+                </div>
+                <div class="focus-card fade-in">
+                    <div class="focus-number">06</div>
+                    <div class="focus-title">G20・APEC首脳会議</div>
+                    <div class="focus-content">それぞれ米国、中国で開催。国際社会の協調動向が注目される</div>
+                </div>
+                <div class="focus-card fade-in">
+                    <div class="focus-number">07</div>
+                    <div class="focus-title">サグラダ・ファミリア完成</div>
+                    <div class="focus-content">着工から140年以上を経て、2026年に本体工事が完了予定。スペインの観光経済への波及効果に期待</div>
+                </div>
+                <div class="focus-card fade-in">
+                    <div class="focus-number">08</div>
+                    <div class="focus-title">EU AI法 主要規定の適用</div>
+                    <div class="focus-content">当初8月の発効予定から、2027年12月へ延期される可能性あり</div>
+                </div>
+                <div class="focus-card fade-in">
+                    <div class="focus-number">09</div>
+                    <div class="focus-title">CBAMとGX-ETSの開始</div>
+                    <div class="focus-content">EU炭素国境調整メカニズムと日本の排出量取引制度が同時期に本格化。企業の脱炭素化を加速</div>
+                </div>
+                <div class="focus-card fade-in">
+                    <div class="focus-number">10</div>
+                    <div class="focus-title">有人月面探査「アルテミスII」</div>
+                    <div class="focus-content">4月までに打ち上げ予定。宇宙船の安全性を検証し、2027年の有人月面着陸への布石とする</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 経済・政治環境 -->
+        <section id="economy" class="section fade-in">
+            <h2 class="section-title">経済・政治環境</h2>
+            
+            <div class="grid grid-2 mb-lg">
+                <div class="card fade-in">
+                    <h3 class="focus-title mb-md">日本経済の現状</h3>
+                    <ul class="styled-list">
+                        <li><strong>全体基調：</strong>米国の通商政策による下押し圧力を受けるものの、企業の設備投資と賃上げ主導の民間消費に支えられ、底堅く推移</li>
+                        <li><strong>需給転換：</strong>需給ギャップが需要不足から供給不足へと転換</li>
+                        <li><strong>核心課題：</strong>人手不足の深刻化。需要拡大とともに、資本投入の加速による供給能力の強化が急務</li>
+                        <li><strong>重要指標：</strong>名目GDPは2015年以降回復基調、上場企業の業績も堅調に推移</li>
+                    </ul>
+                </div>
+                
+                <div class="card fade-in">
+                    <h3 class="focus-title mb-md">高市新政権の経済政策</h3>
+                    <ul class="styled-list">
+                        <li><strong>政策継承：</strong>前政権の賃上げ・物価高対策を継承</li>
+                        <li><strong>戦略投資：</strong>17の戦略分野（AI・半導体、造船、創薬など）への投資を加速</li>
+                        <li><strong>資金規模：</strong>物価高対策と賃上げ支援に17.7兆円、成長投資拡大に13.9兆円を充当</li>
+                        <li><strong>企業の関心：</strong>物価高と賃金問題が依然として企業の最大の関心事（302社が言及）</li>
+                    </ul>
+                </div>
+                
+                <div class="card fade-in">
+                    <h3 class="focus-title mb-md">AIがもたらす経済成長の機会</h3>
+                    <ul class="styled-list">
+                        <li><strong>位置づけ：</strong>AIを経済成長の起爆剤と位置づけ、半導体やデータセンターなど関連分野への投資を牽引</li>
+                        <li><strong>市場拡大：</strong>AIデバイス・アプリの世界市場は継続的に成長、半導体世界市場規模も着実に拡大</li>
+                        <li><strong>活用領域：</strong>化学・バイオ、物流、医療・介護などの分野でイノベーションを促進</li>
+                        <li><strong>開発重点：</strong>脱炭素電源の供給強化、産業の生産性向上と付加価値創造を支援</li>
+                    </ul>
+                </div>
+                
+                <div class="card fade-in">
+                    <h3 class="focus-title mb-md">米国トランプ政策の影響</h3>
+                    <ul class="styled-list">
+                        <li><strong>貿易衝撃：</strong>2025年4月以降、日本の対米輸出が減少。輸送用機器への影響が顕著</li>
+                        <li><strong>供給網調整：</strong>自動車業界は地政学リスクに直面、半導体など重要部品の供給が不安定化</li>
+                        <li><strong>関税影響：</strong>日米で関税上限15%の合意に達し、直接的な影響は限定的</li>
+                        <li><strong>政策不透明性：</strong>依然として企業の意思決定に影響を及ぼす</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 業界分析 -->
+        <section id="industries" class="section fade-in">
+            <h2 class="section-title">23業界分析</h2>
+            <p class="section-subtitle">
+                基礎産業から消費サービスまでを網羅する包括的な業界インサイト。各業界について2025年の回顧と2026年の注目点を解説します。
+            </p>
+            
+            <div class="grid grid-3">
+                <!-- 鉄鋼 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">鉄</div>
+                    <h4 class="industry-name">鉄鋼</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">世界需要は前年並み。中国需要は減少したが新興国が補完。日本国内需要は建設・自動車産業の低迷により前年比3.2%減。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">米国の高機能鋼材需要が増加し、日系企業が対米投資を拡大。高炉水素製鉄など脱炭素技術の推進。</div>
+                    </div>
+                </div>
+                
+                <!-- 石油・ガス -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">油</div>
+                    <h4 class="industry-name">石油・ガス</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">需給緩和により下落基調。WTI原油価格は約60ドル/バレル。欧州天然ガス価格は約11ドル/百万Btu。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">OPEC+の自主減産政策見直しが原油価格に影響。石油元売企業によるSAF（持続可能な航空燃料）生産の加速。</div>
+                    </div>
+                </div>
+                
+                <!-- 石油化学 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">化</div>
+                    <h4 class="industry-name">石油化学</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">エチレン需要の低迷と供給過剰が継続。国内生産稼働率は長期にわたり90%を下回る（70%台）。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">国内企業による工場の統廃合と生産集約の推進。環境配慮型製品や半導体材料など高付加価値分野への注力。</div>
+                    </div>
+                </div>
+                
+                <!-- 紙・パルプ -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">紙</div>
+                    <h4 class="industry-name">紙・パルプ</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">洋紙需要はデジタル化の影響で減少継続（前年比-4.1%）。板紙需要も微減（同-0.5%）。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">企業による生産体制の調整、海外事業拡大およびバイオ事業の研究開発加速。国際大手によるM&Aを通じた事業統合。</div>
+                    </div>
+                </div>
+                
+                <!-- 医薬品 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">薬</div>
+                    <h4 class="industry-name">医薬品</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">薬価改革は創薬と安定供給に焦点。日米関税上限15%の影響は限定的。バイオ医薬品に対する政府の生産体制支援強化。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">政府基金の設立により、基礎研究から実用化までを加速。2026年度は薬剤費削減に焦点が当たり、長期収載品の価格調整が進む。</div>
+                    </div>
+                </div>
+                
+                <!-- 食品 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">食</div>
+                    <h4 class="industry-name">食品</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">1-8月の家計食品支出は前年比+5.8%。米価格高騰により備蓄米を放出。企業はサプライチェーン最適化で物流コストを削減。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">ビッグデータとAIによるサプライチェーン最適化で生産性を向上。「食料システム法」施行、政府の資金支援による安定供給確保。</div>
+                    </div>
+                </div>
+                
+                <!-- 電子部品・半導体 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">半</div>
+                    <h4 class="industry-name">電子部品・半導体</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">生成AIが高性能半導体（AIアクセラレータ、HBM）需要を牽引。自動車および産業機械分野の需要は軟調。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">主要企業による2nmプロセスへの移行推進。CPO（光電融合）技術の商用化により、国内サプライヤーに商機。</div>
+                    </div>
+                </div>
+                
+                <!-- 電気機械 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">電</div>
+                    <h4 class="industry-name">電気機械</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">AIサーバーとWindows 10更新需要がPC市場を牽引。白物家電の海外市場は堅調。関税が対米輸出製品に影響。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">世界的なデータセンター投資拡大に伴い、国内企業の電力設備・冷却技術の生産能力強化。GPU高出力化が水冷式冷却の普及を後押し。</div>
+                    </div>
+                </div>
+                
+                <!-- 機械 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">機</div>
+                    <h4 class="industry-name">機械</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">産業機械は内外需ともに好調、1-9月受注額は前年比+23.1%。建設機械は対米輸出が低迷。工作機械は中国・北米市場が牽引。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">日米戦略投資合意（最大5,500億円）が具体化、米国の設備投資活発化が機械需要を牽引。</div>
+                    </div>
+                </div>
+                
+                <!-- 自動車 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">車</div>
+                    <h4 class="industry-name">自動車</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">世界新車販売は前年比+3%、EV販売比率は23%に達する。日系OEMは2.5兆円の関税負担が見込まれる。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">USMCA協定の7月3カ国協議で原産地規則が強化される可能性。中国系OEMの日本進出により、国内EV市場の競争が激化。</div>
+                    </div>
+                </div>
+                
+                <!-- 造船 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">船</div>
+                    <h4 class="industry-name">造船</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">手持ち工事残高は前年比+9%、船台は逼迫。船価高騰と円安が日系企業の収益改善に寄与。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">政府が造船業を17の重点投資分野に指定、資金・税制支援を強化。企業は中国との価格競争に対抗するため連携を深化。</div>
+                    </div>
+                </div>
+                
+                <!-- 通信 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">通</div>
+                    <h4 class="industry-name">通信</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">移動体通信契約数は増加、ARPUは下げ止まり反転。企業はM&Aや提携を通じて金融事業を強化。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">次世代技術の商用化：AIデータセンター（AIDC）、オールフォトニクス・ネットワーク（APN）、非地上系ネットワーク（NTN）。</div>
+                    </div>
+                </div>
+                
+                <!-- 海運 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">海</div>
+                    <h4 class="industry-name">海運</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">コンテナ船運賃は地政学的要因により短期的に大きく変動。6月以降は需要減と新造船竣工により低水準で推移。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">国際的な脱炭素規制の強化、IMO中期措置の実施は延期。企業は地域規制の断片化リスクへの対応が必要。</div>
+                    </div>
+                </div>
+                
+                <!-- 空運 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">空</div>
+                    <h4 class="industry-name">空運</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">世界の国際線旅客数は過去最高を更新。日本の国際線は大阪万博効果で旅客輸送量が大幅増。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">航空機供給の制約（ボーイング品質問題、エンジン供給不足）。SAF混合義務化の推進。</div>
+                    </div>
+                </div>
+                
+                <!-- 陸運 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">陸</div>
+                    <h4 class="industry-name">陸運</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">2024年ドライバー時間外労働上限規制により慢性的な供給不足、運賃上昇が継続。改正物流関連二法が施行。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">物流大手による資産・事業提携を通じたリソース統合。CLO（物流統括管理者）選任の義務化。</div>
+                    </div>
+                </div>
+                
+                <!-- 建設 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">建</div>
+                    <h4 class="industry-name">建設</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">オフィス・ホテルは内需とインバウンド需要が下支え。施工能力不足による建築費高騰、企業の選別受注が進む。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">第1次国土強靭化中期計画（2026-30年度）が始動。外国人労働者の受入拡大とデジタル化で施工能力不足に対応。</div>
+                    </div>
+                </div>
+                
+                <!-- 不動産 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">不</div>
+                    <h4 class="industry-name">不動産</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">制度改正と建築費上昇により購入需要が減少。都心好立地は品薄、湾岸エリアでは大型空室が存在。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">東京23区の新築分譲マンション価格高騰に対し、政府が規制を検討。需給逼迫の構図は継続する見込み。</div>
+                    </div>
+                </div>
+                
+                <!-- アパレル -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">服</div>
+                    <h4 class="industry-name">アパレル</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">訪日客の高額消費が減速、大手百貨店の売上は前年割れ。機能性衣料市場の競争が激化。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">TikTok EC参入、Googleバーチャル試着サービスが利便性を向上。「推し活」市場拡大、企業はアイドル関連商品を開発。</div>
+                    </div>
+                </div>
+                
+                <!-- スーパー・ドラッグストア -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">店</div>
+                    <h4 class="industry-name">スーパー・ドラッグストア</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">消費者の節約志向が強まり、低価格戦略企業が恩恵を受ける。GMS企業はM&Aや事業売却で配置を最適化。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">生成AIが会話型商品検索と購買を促進。ドラッグストアは調剤業務を強化、業界再編が続く。</div>
+                    </div>
+                </div>
+                
+                <!-- 外食 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">飲</div>
+                    <h4 class="industry-name">外食</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">価格改定により1-9月売上は前年比+7%、訪日客飲食消費は同+20%。大手企業はDX投資を拡大。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">政府の省力化投資支援強化を受け、企業は自動化設備の導入を加速。高付加価値商品で収益モデルを最適化。</div>
+                    </div>
+                </div>
+                
+                <!-- 旅行・ホテル -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">旅</div>
+                    <h4 class="industry-name">旅行・ホテル</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">国内旅行は宿泊費高騰の影響で取扱額が前年比-6%。訪日客が宿泊需要を支え、1-8月延べ宿泊者数は同+1%。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">政府のビザ緩和推進により、訪日客数は増加傾向が続く。民泊施設数は前年比+32%、宿泊形態が多様化。</div>
+                    </div>
+                </div>
+                
+                <!-- 電力 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">電</div>
+                    <h4 class="industry-name">電力</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">第7次エネルギー基本計画策定、再生可能エネルギーの主力電源化と原子力の活用を推進。洋上風力はコスト高騰で一部撤退も。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">GX-ETS本格稼働、CO2排出量10万t以上企業は排出権取引に参加。小売企業の供給力確保義務を明確化。</div>
+                    </div>
+                </div>
+                
+                <!-- 情報サービス -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">IT</div>
+                    <h4 class="industry-name">情報サービス</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025年 回顧</div>
+                        <div class="industry-text">企業のDX需要は旺盛、クラウドと生成AIが市場成長を牽引。大手企業はIT子会社買収で海外展開を強化。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026年 注目点</div>
+                        <div class="industry-text">業務効率化におけるAIエージェントの活用が進む。政府は国産サイバーセキュリティ製品の研究開発支援を強化。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SMBC調査インサイト -->
+        <section id="survey" class="section fade-in">
+            <h2 class="section-title">SMBC調査インサイト</h2>
+            <p class="section-subtitle">
+                2025年10-11月に実施、439社から有効回答を得ました。米国の関税措置および国内政治情勢の影響に焦点を当てています。
+            </p>
+            
+            <div class="grid grid-4 mb-lg">
+                <div class="stat-card fade-in">
+                    <div class="stat-value">439</div>
+                    <div class="stat-label">有効回答企業数</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-value">57%</div>
+                    <div class="stat-label">関税の影響なし・不明</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-value">28%</div>
+                    <div class="stat-label">2026年の景況改善を予想</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-value">49%</div>
+                    <div class="stat-label">設備投資の資金支援を要望</div>
+                </div>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card fade-in">
+                    <h3 class="focus-title mb-md">米国関税の影響予測</h3>
+                    <ul class="styled-list">
+                        <li><strong>プラス影響：</strong>米国事業の競争環境改善（23%）、新規販売先の獲得（10%）</li>
+                        <li><strong>マイナス影響：</strong>対米輸出減少（22%）、他地域需要の連鎖的減少（12%）、調達コスト増加（14%）</li>
+                        <li><strong>業績影響：</strong>19%の企業が営業利益の10-30%減少を見込む</li>
+                        <li><strong>価格転嫁：</strong>37%が検討中、11%が実施済み。転嫁率は25-50%が中心</li>
+                    </ul>
+                </div>
+                
+                <div class="card fade-in">
+                    <h3 class="focus-title mb-md">企業の対応策</h3>
+                    <ul class="styled-list">
+                        <li><strong>供給網調整：</strong>84%の企業が販売先の見直しを実施・計画、83%が調達先を見直し</li>
+                        <li><strong>投資戦略：</strong>19%が投資増額を検討、14%が投資実行の延期を計画</li>
+                        <li><strong>要望支援：</strong>設備投資への資金支援（49%）、関税関連情報の提供（39%）、資金繰り支援（34%）</li>
+                        <li><strong>景況感：</strong>43%が2026年に影響なしと回答、悪化予想はわずか3%</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- まとめ -->
+        <section class="section fade-in">
+            <h2 class="section-title">コア・インサイト</h2>
+            <div class="card" style="max-width: 900px; margin: 0 auto;">
+                <h3 class="focus-title mb-md text-center">2025-2026年の重要な転換点</h3>
+                <ul class="styled-list">
+                    <li><strong>政治変革：</strong>高市新政権の発足は新たな政策サイクルの始まりを告げ、17の戦略分野への重点投資が産業構造を再編</li>
+                    <li><strong>技術駆動：</strong>AIを経済成長の起爆剤とし、半導体やデータセンターなど関連サプライチェーンに歴史的な好機</li>
+                    <li><strong>世界的再編：</strong>米国の関税政策、サプライチェーン調整、地政学的緊張が、企業のグローバル配置の再考を促す</li>
+                    <li><strong>構造転換：</strong>需要不足から供給不足へ転換、人手不足が企業の自動化・デジタル化を加速</li>
+                    <li><strong>脱炭素の波：</strong>CBAMとGX-ETSの同時始動により、環境規制が企業戦略の中核的課題に</li>
+                    <li><strong>不確実性の常態化：</strong>政策、市場、技術の急速な変化に対し、企業はより強靭なレジリエンスと柔軟性の構築が不可欠</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <p class="footer-text">株式会社三井住友銀行 | CA本部 企業調査部</p>
+        <p class="footer-text">本レポートは2025年12月発行の「2025年の回顧と2026年の展望」に基づき作成</p>
+        <p class="footer-text" style="margin-top: var(--space-md); font-size: 12px;">
+            免責事項：本資料は情報提供のみを目的としており、取引の勧誘を目的としたものではありません。内容は作成時点で信頼できる資料に基づいていますが、情報の正確性や完全性を保証するものではありません。
+        </p>
+    </footer>
+
+    <script>
+        // スクロールアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // スムーズスクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // ナビゲーションバーのスクロール効果
+        let lastScroll = 0;
+        const nav = document.querySelector('.nav');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                nav.style.transform = 'translateY(0)';
+            } else if (currentScroll > lastScroll && currentScroll > 100) {
+                nav.style.transform = 'translateY(-100%)';
+            } else if (currentScroll < lastScroll) {
+                nav.style.transform = 'translateY(0)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>

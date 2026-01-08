@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025年回顾与2026年展望 | 三井住友银行</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:wght@400;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;500;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* 色彩系统 */
+            --bg-primary: #F5F1E8;
+            --bg-secondary: #EDE7DC;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #4A4A4A;
+            --text-tertiary: #7A7A7A;
+            --accent: #2C2C2C;
+            --border: #D4CEC0;
+            --shadow: rgba(26, 26, 26, 0.08);
+            
+            /* 排版系统 */
+            --font-display: 'Playfair Display', serif;
+            --font-serif: 'Noto Serif SC', serif;
+            --font-sans: 'Noto Sans SC', sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+            
+            /* 间距系统 */
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 32px;
+            --space-lg: 64px;
+            --space-xl: 96px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-serif);
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            line-height: 1.8;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+        
+        /* 纸张纹理背景 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(26, 26, 26, 0.01) 2px,
+                    rgba(26, 26, 26, 0.01) 4px
+                );
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        /* 导航栏 */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(245, 241, 232, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: var(--space-sm) var(--space-md);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: var(--space-md);
+            list-style: none;
+        }
+        
+        .nav-links a {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 400;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+        
+        /* 主容器 */
+        .container {
+            position: relative;
+            z-index: 2;
+            padding-top: 80px;
+        }
+        
+        .section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-md);
+        }
+        
+        /* 封面 */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: var(--space-xl) var(--space-md);
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 120px;
+            background: linear-gradient(to bottom, var(--border), transparent);
+        }
+        
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 86px);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--space-md);
+            letter-spacing: -1px;
+        }
+        
+        .hero-subtitle {
+            font-family: var(--font-serif);
+            font-size: clamp(20px, 3vw, 28px);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+            font-weight: 400;
+        }
+        
+        .hero-meta {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-tertiary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        /* 章节标题 */
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 600;
+            margin-bottom: var(--space-lg);
+            text-align: center;
+            position: relative;
+            padding-bottom: var(--space-md);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .section-subtitle {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: var(--space-lg);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* 卡片系统 */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: var(--space-md);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px var(--shadow);
+        }
+        
+        /* 网格系统 */
+        .grid {
+            display: grid;
+            gap: var(--space-md);
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+        
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        
+        /* 时间轴 */
+        .timeline {
+            position: relative;
+            padding-left: var(--space-lg);
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -73px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--bg-primary);
+        }
+        
+        .timeline-date {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .timeline-title {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .timeline-desc {
+            font-family: var(--font-sans);
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        /* 焦点卡片 */
+        .focus-card {
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent);
+            padding: var(--space-md);
+            margin-bottom: var(--space-md);
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        
+        .focus-number {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .focus-title {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+        }
+        
+        .focus-content {
+            font-family: var(--font-sans);
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        /* 行业卡片 */
+        .industry-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: var(--space-md);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px var(--shadow);
+            border-color: var(--accent);
+        }
+        
+        .industry-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-mono);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .industry-name {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .industry-section {
+            margin-bottom: var(--space-sm);
+        }
+        
+        .industry-label {
+            font-family: var(--font-sans);
+            font-size: 12px;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .industry-text {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* 统计卡片 */
+        .stat-card {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: var(--space-md);
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-family: var(--font-mono);
+            font-size: 42px;
+            font-weight: 600;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .stat-label {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        
+        /* 列表样式 */
+        .styled-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .styled-list li {
+            font-family: var(--font-sans);
+            font-size: 15px;
+            color: var(--text-secondary);
+            padding-left: var(--space-md);
+            margin-bottom: var(--space-sm);
+            position: relative;
+        }
+        
+        .styled-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        /* 页脚 */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: var(--space-lg) var(--space-md);
+            text-align: center;
+        }
+        
+        .footer-text {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-tertiary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .section {
+                padding: var(--space-lg) var(--space-sm);
+            }
+            
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                padding-left: var(--space-md);
+            }
+            
+            .timeline-item::before {
+                left: -41px;
+            }
+        }
+        
+        /* 滚动动画 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* 辅助类 */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-sm { margin-bottom: var(--space-sm); }
+        .mb-md { margin-bottom: var(--space-md); }
+        .mb-lg { margin-bottom: var(--space-lg); }
+        
+        .mt-sm { margin-top: var(--space-sm); }
+        .mt-md { margin-top: var(--space-md); }
+        .mt-lg { margin-top: var(--space-lg); }
+        
+        strong {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="nav-logo">SMBC Report</div>
+            <ul class="nav-links">
+                <li><a href="#summary">摘要</a></li>
+                <li><a href="#review2025">2025回顾</a></li>
+                <li><a href="#outlook2026">2026展望</a></li>
+                <li><a href="#economy">经济环境</a></li>
+                <li><a href="#industries">行业分析</a></li>
+                <li><a href="#survey">调研洞察</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- 封面 -->
+        <section class="hero">
+            <h1 class="hero-title">2025年の回顧と<br>2026年の展望</h1>
+            <p class="hero-subtitle">2025年回顾与2026年展望</p>
+            <div class="hero-meta">
+                株式会社三井住友銀行 · CA本部 企业调查部 · 2025年12月
+            </div>
+        </section>
+
+        <!-- 执行摘要 -->
+        <section id="summary" class="section fade-in">
+            <h2 class="section-title">执行摘要</h2>
+            <p class="section-subtitle">
+                2025年以特朗普总统就任与关税发动为契机，全球经济与政治局势受其显著影响。
+                日本国内以日经平均股价创新高、高市新政权成立为标志性事件。
+            </p>
+            
+            <div class="grid grid-4 mb-lg">
+                <div class="stat-card fade-in">
+                    <div class="stat-value">52,000</div>
+                    <div class="stat-label">日经平均股价最高点 (円)</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-value">5.39%</div>
+                    <div class="stat-label">春斗工资上涨率</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-value">23%</div>
+                    <div class="stat-label">全球EV销售比率</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-value">439</div>
+                    <div class="stat-label">SMBC问卷有效回答</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2025年回顾 -->
+        <section id="review2025" class="section fade-in">
+            <h2 class="section-title">2025年回顾</h2>
+            
+            <div class="mb-lg">
+                <h3 class="section-subtitle" style="font-size: 24px; margin-bottom: var(--space-md);">重大事件时间轴</h3>
+                <div class="timeline">
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-date">2025年1月</div>
+                        <div class="timeline-title">特朗普就任美国第47代总统</div>
+                        <div class="timeline-desc">推行"美国优先"通商政策，日银加息至约0.5%</div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-date">2025年4月</div>
+                        <div class="timeline-title">大阪万博开幕 & 特朗普发布大规模关税措施</div>
+                        <div class="timeline-desc">160国及地区参与万博，关税措施影响全球贸易格局</div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-date">2025年7月</div>
+                        <div class="timeline-title">日美达成关税合意 & 春斗工资上涨创34年新高</div>
+                        <div class="timeline-desc">工资上涨率达5.25%，关税上限设定为15%</div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-date">2025年10月</div>
+                        <div class="timeline-title">高市早苗就任首相 & 日经股价突破5万円</div>
+                        <div class="timeline-desc">日本首位女性首相，股价创历史新高达52,000円</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="section-subtitle" style="font-size: 24px; margin-bottom: var(--space-md);">2025年10大关注焦点</h3>
+                <div class="grid grid-2">
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">01</div>
+                        <div class="focus-title">特朗普总统就任与关税发动</div>
+                        <div class="focus-content">推行"美国优先"通商政策，4月发布大规模关税措施，7月日美达成关税与对美投资协议</div>
+                    </div>
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">02</div>
+                        <div class="focus-title">高市新政权成立</div>
+                        <div class="focus-content">日本首位女性首相，政策聚焦安全保障、成长与财政纪律平衡，推进DEI与女性登用</div>
+                    </div>
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">03</div>
+                        <div class="focus-title">日经平均股价创新高</div>
+                        <div class="focus-content">年初39,000円起步，10月达52,000円，AI相关个股为主要驱动力</div>
+                    </div>
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">04</div>
+                        <div class="focus-title">大阪关西万博</div>
+                        <div class="focus-content">4-10月举办，160国及地区参与，主题为"生命光辉的未来社会设计"</div>
+                    </div>
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">05</div>
+                        <div class="focus-title">网络攻击多发</div>
+                        <div class="focus-content">RaaS模式普及，企业与个人受攻击案例激增，网络诈骗金额创新高</div>
+                    </div>
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">06</div>
+                        <div class="focus-title">工资上涨与物价高企</div>
+                        <div class="focus-content">春斗工资上涨率5.39%（1991年以来高位），但物价上涨超名义工资增速，实际工资停滞</div>
+                    </div>
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">07</div>
+                        <div class="focus-title">美中·美俄首脑会谈</div>
+                        <div class="focus-content">美中互降关税，美俄约定后续再会谈</div>
+                    </div>
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">08</div>
+                        <div class="focus-title">Windows10支持结束</div>
+                        <div class="focus-content">10月停止服务，推动个人与企业OS迁移</div>
+                    </div>
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">09</div>
+                        <div class="focus-title">全球军事支出扩大</div>
+                        <div class="focus-content">俄乌战争长期化，特朗普施压各国增加国防费，NATO调整防御支出目标</div>
+                    </div>
+                    <div class="focus-card fade-in">
+                        <div class="focus-number">10</div>
+                        <div class="focus-title">G20首脑会议(南非)</div>
+                        <div class="focus-content">非洲首次主办，凸显非洲国际角色，同时暴露国际社会分裂</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2026年展望 -->
+        <section id="outlook2026" class="section fade-in">
+            <h2 class="section-title">2026年展望</h2>
+            <p class="section-subtitle">
+                2026年美国中期选举将牵动全球经济政策走向，日本高市政权政策具体化将带动国内外投资。
+            </p>
+            
+            <div class="grid grid-2">
+                <div class="focus-card fade-in">
+                    <div class="focus-number">01</div>
+                    <div class="focus-title">美国中期选举</div>
+                    <div class="focus-content">11月改选联邦参众两院部分席位，影响特朗普政权施政与对美投资</div>
+                </div>
+                <div class="focus-card fade-in">
+                    <div class="focus-number">02</div>
+                    <div class="focus-title">米兰·科尔蒂纳丹佩佐冬季奥运会</div>
+                    <div class="focus-content">首次多城市举办，活用历史设施控费，带动意大利观光与交通</div>
+                </div>
+                <div class="focus-card fade-in">
+                    <div class="focus-number">03</div>
+                    <div class="focus-title">FIFA世界杯</div>
+                    <div class="focus-content">美加墨共办，规模扩至48队104场，为史上最大</div>
+                </div>
+                <div class="focus-card fade-in">
+                    <div class="focus-number">04</div>
+                    <div class="focus-title">日本成长战略会议</div>
+                    <div class="focus-content">6月汇总17个重点领域（AI、造船等）官民投资计划与成长战略</div>
+                </div>
+                <div class="focus-card fade-in">
+                    <div class="focus-number">05</div>
+                    <div class="focus-title">COP31·NDC履行验证</div>
+                    <div class="focus-content">聚焦各国排放削减目标的具体化与执行</div>
+                </div>
+                <div class="focus-card fade-in">
+                    <div class="focus-number">06</div>
+                    <div class="focus-title">G20、APEC首脑会谈</div>
+                    <div class="focus-content">分别在美国、中国举办，关注国际社会协作动向</div>
+                </div>
+                <div class="focus-card fade-in">
+                    <div class="focus-number">07</div>
+                    <div class="focus-title">圣家堂大教堂竣工</div>
+                    <div class="focus-content">历时140余年，2026年完成主体工程，带动西班牙旅游经济</div>
+                </div>
+                <div class="focus-card fade-in">
+                    <div class="focus-number">08</div>
+                    <div class="focus-title">EU AI法主要规定适用</div>
+                    <div class="focus-content">原计划8月生效，可能延期至2027年12月</div>
+                </div>
+                <div class="focus-card fade-in">
+                    <div class="focus-number">09</div>
+                    <div class="focus-title">CBAM与GX-ETS启动</div>
+                    <div class="focus-content">EU碳关税与日本排出量交易制度同步实施，推动企业脱碳</div>
+                </div>
+                <div class="focus-card fade-in">
+                    <div class="focus-number">10</div>
+                    <div class="focus-title">有人月面探查"Artemis II"</div>
+                    <div class="focus-content">4月前发射，验证飞船安全性，为2027年载人登月铺垫</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 经济政治环境 -->
+        <section id="economy" class="section fade-in">
+            <h2 class="section-title">经济·政治环境</h2>
+            
+            <div class="grid grid-2 mb-lg">
+                <div class="card fade-in">
+                    <h3 class="focus-title mb-md">日本经济现状</h3>
+                    <ul class="styled-list">
+                        <li>整体态势：受美国通商政策下押影响，但依托企业设备投资与工资上涨驱动的民间消费，经济稳步增长</li>
+                        <li>供需转变：供需缺口从需求不足转向供给不足</li>
+                        <li>核心挑战：人手不足加剧，需通过扩大需求与加速资本投入强化供给能力</li>
+                        <li>关键数据：名义GDP自2015年后持续回升，上市企业业绩稳健增长</li>
+                    </ul>
+                </div>
+                
+                <div class="card fade-in">
+                    <h3 class="focus-title mb-md">高市新政权经济政策</h3>
+                    <ul class="styled-list">
+                        <li>政策继承：延续前政权工资上涨、物价应对政策</li>
+                        <li>战略投资：17个战略领域（AI·半导体、造船、创药等）加速投资</li>
+                        <li>资金规模：17.7兆円用于物价影响缓解与工资上涨支持，13.9兆円用于成长投资扩大</li>
+                        <li>企业关注：物价高企与工资问题仍是企业最关注领域（302家企业提及）</li>
+                    </ul>
+                </div>
+                
+                <div class="card fade-in">
+                    <h3 class="focus-title mb-md">AI带来的经济增长机遇</h3>
+                    <ul class="styled-list">
+                        <li>核心定位：AI为经济增长起爆剂，带动半导体、数据中心等相关领域投资</li>
+                        <li>市场扩张：AI设备·应用全球市场持续增长，半导体世界市场规模稳步扩大</li>
+                        <li>应用场景：化学·生物、物流、医疗·介护等领域创新</li>
+                        <li>发展重点：强化脱碳电源供给，支撑产业生产力提升与附加值创造</li>
+                    </ul>
+                </div>
+                
+                <div class="card fade-in">
+                    <h3 class="focus-title mb-md">美国特朗普政策影响</h3>
+                    <ul class="styled-list">
+                        <li>贸易冲击：2025年4月后日本对美出口减少，运输用机器受创明显</li>
+                        <li>供应链调整：汽车行业面临地缘政治风险，半导体等关键零部件供应不稳定</li>
+                        <li>关税影响：日美达成关税上限15%的协议，直接影响有限</li>
+                        <li>政策不确定性：仍对企业决策产生影响</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 行业分析 -->
+        <section id="industries" class="section fade-in">
+            <h2 class="section-title">23个行业分析</h2>
+            <p class="section-subtitle">
+                覆盖从基础工业到消费服务的全面行业洞察，每个行业包含2025年回顾与2026年焦点。
+            </p>
+            
+            <div class="grid grid-3">
+                <!-- 钢铁 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">鉄</div>
+                    <h4 class="industry-name">钢铁</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">全球需求与前年持平，中国需求减少但新兴国补位。日本内需受建设·汽车行业低迷影响，同比减少3.2%。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">美国高端钢铁需求增长，日系企业加大对美投资。推进高炉水素制铁等脱碳技术。</div>
+                    </div>
+                </div>
+                
+                <!-- 石油·燃气 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">油</div>
+                    <h4 class="industry-name">石油·燃气</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">供需缓和呈下跌基调，WTI原油价格约60美元/桶。欧洲天然气价格约11美元/百万Btu。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">OPEC+自主减产政策调整影响油价。石油元売企业加速SAF（可持续航空燃料）生产。</div>
+                    </div>
+                </div>
+                
+                <!-- 石油化学 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">化</div>
+                    <h4 class="industry-name">石油化学</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">乙烯需求低迷与供给过剩持续，国内生产稼働率长期低于90%（70%台）。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">国内企业推进工厂关停与生产集中。聚焦环境友好型产品、半导体材料等高附加值领域。</div>
+                    </div>
+                </div>
+                
+                <!-- 纸·纸浆 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">紙</div>
+                    <h4 class="industry-name">纸·纸浆</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">洋纸需求因数字化持续减少（同比-4.1%），板纸需求微减（同比-0.5%）。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">企业调整生产体制，加速海外业务扩张与生物业务研发。国际巨头通过并购整合业务。</div>
+                    </div>
+                </div>
+                
+                <!-- 医药品 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">薬</div>
+                    <h4 class="industry-name">医药品</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">药价改革聚焦创药与稳定供给。日美关税上限15%，影响有限。生物医药政府强化生产体制支持。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">政府设立基金，加速从基础研发到实用化。2026年度聚焦药剂费削减，调整长期收载品定价。</div>
+                    </div>
+                </div>
+                
+                <!-- 食品 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">食</div>
+                    <h4 class="industry-name">食品</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">1-8月家计食品支出同比+5.8%。大米价格高腾引发储备米放出。企业优化供应链降低物流成本。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">大数据与AI优化供应链，提升生产性。《食料系统法》实施，政府通过资金支持稳定供给。</div>
+                    </div>
+                </div>
+                
+                <!-- 电子部品·半导体 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">半</div>
+                    <h4 class="industry-name">电子部品·半导体</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">生成AI驱动高端半导体（AI加速器、HBM）需求。汽车与产业机械领域需求疲软。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">主要企业推进2nm制程迁移。CPO（光电融合）技术商业化，国内供应商迎来机遇。</div>
+                    </div>
+                </div>
+                
+                <!-- 电气机械 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">電</div>
+                    <h4 class="industry-name">电气机械</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">AI服务器与Windows10替换带动PC需求。白物家电海外市场稳健。关税影响美向产品。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">全球数据中心投资扩大，国内企业强化电力设备、冷却技术生产能力。GPU功耗提升推动水冷式冷却普及。</div>
+                    </div>
+                </div>
+                
+                <!-- 机械 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">機</div>
+                    <h4 class="industry-name">机械</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">产业机械内外需向好，1-9月受注额同比+23.1%。建设机械对美出口低迷。工作机械中国与北美市场驱动。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">日美战略投资协议（最大5500亿日元）落地，美国设备投资活発化带动机械需求。</div>
+                    </div>
+                </div>
+                
+                <!-- 自动车 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">車</div>
+                    <h4 class="industry-name">自动车</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">全球新车销量同比+3%，EV销售比率达23%。日系OEM预计承担2.5兆円关税负担。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">USMCA协议7月三国协商可能强化原产品条件。中资系OEM进军日本，国内EV市场竞争激化。</div>
+                    </div>
+                </div>
+                
+                <!-- 造船 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">船</div>
+                    <h4 class="industry-name">造船</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">手持工事残高同比+9%，船台紧张。高船价与日元贬值推动日系企业盈利改善。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">政府将造船业列为17个重点投资领域，强化资金与税制支持。企业深化协作应对中国价格竞争。</div>
+                    </div>
+                </div>
+                
+                <!-- 通信 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">通</div>
+                    <h4 class="industry-name">通信</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">移动体通信契约数增长，ARPU止跌回升。企业通过并购或合作强化金融业务。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">次世代技术商用化：AI数据中心（AIDC）、光网络（APN）、非地上网络（NTN）。</div>
+                    </div>
+                </div>
+                
+                <!-- 海运 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">海</div>
+                    <h4 class="industry-name">海运</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">集装箱船运賃受地缘政治因素影响，短期波动明显。6月后因需求减少与新船竣工呈低水準。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">国际脱碳规制强化，IMO中期措施延期实施。企业需应对区域规制碎片化风险。</div>
+                    </div>
+                </div>
+                
+                <!-- 空运 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">空</div>
+                    <h4 class="industry-name">空运</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">全球国际旅客数创历史新高。日本国际线受益于大阪万博，客运周转量大幅增长。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">航空机供给受限（波音品质问题、发动机供应不足）。SAF混合义务化推进。</div>
+                    </div>
+                </div>
+                
+                <!-- 陆运 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">陸</div>
+                    <h4 class="industry-name">陆运</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">2024年司机时间外劳动上限规制导致慢性供给不足，运费持续上涨。改正物流相关二法施行。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">物流巨头通过资产业务提携整合资源。CLO（物流统括管理者）选任义务化。</div>
+                    </div>
+                </div>
+                
+                <!-- 建设 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">建</div>
+                    <h4 class="industry-name">建设</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">办公楼·酒店受内需与入境需求支撑。施工能力不足导致建筑费高腾，企业选择性接单。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">第1次国土强靭化中期计划启动（2026-30年度）。通过导入外国人劳动者与数字化应对施工能力不足。</div>
+                    </div>
+                </div>
+                
+                <!-- 不动产 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">不</div>
+                    <h4 class="industry-name">不动产</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">制度改正与建筑费上涨导致购买需求减少。都心好立地房源紧张，湾岸区域存在大型空室。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">东京23区新筑分譲公寓价格高腾，政府探讨规制。供需紧张格局预计持续。</div>
+                    </div>
+                </div>
+                
+                <!-- 服装 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">服</div>
+                    <h4 class="industry-name">服装</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">访日客高额消费减速，大手百貨店売上同比下滑。功能型服装市场竞争激化。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">TikTok EC参入、Google虚拟试穿服务提升便利性。"推し活"市场扩大，企业开发偶像周边商品。</div>
+                    </div>
+                </div>
+                
+                <!-- 超市·药妆店 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">店</div>
+                    <h4 class="industry-name">超市·药妆店</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">消费者节约志向强化，低价战略企业受益。GMS企业通过并购与业务出售优化布局。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">生成AI推动会话式商品搜索与购买。药妆店强化调剂业务，行业重组持续。</div>
+                    </div>
+                </div>
+                
+                <!-- 外食 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">飲</div>
+                    <h4 class="industry-name">外食</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">价格上涨推动1-9月売上同比+7%，访日客饮食消费同比+20%。大手企业加大DX投资。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">政府强化省力化投资支持，企业加速引入自动化设备。通过高附加值商品优化盈利模式。</div>
+                    </div>
+                </div>
+                
+                <!-- 旅行·酒店 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">旅</div>
+                    <h4 class="industry-name">旅行·酒店</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">国内旅行受宿泊费高腾影响，取扱额同比-6%。访日客支撑宿泊需求，1-8月延べ宿泊者数同比+1%。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">政府推动签证放宽，访日客数有望持续增加。民泊设施数同比+32%，住宿形态多样化。</div>
+                    </div>
+                </div>
+                
+                <!-- 电力 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">電</div>
+                    <h4 class="industry-name">电力</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">第7次能源基本计划出台，推进可再生能源主力化与核电活用。洋上风力成本高腾导致部分项目撤退。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">GX-ETS启动，CO2排放量10万t以上企业需参与排放权交易。明确小売企业供电能力确保义务。</div>
+                    </div>
+                </div>
+                
+                <!-- 情报服务 -->
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">IT</div>
+                    <h4 class="industry-name">情报服务</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">2025回顾</div>
+                        <div class="industry-text">企业DX需求旺盛，云计算与生成AI驱动市场增长。大手企业并购IT子公司，强化海外拓展。</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">2026焦点</div>
+                        <div class="industry-text">企业推进AI Agent在业务效率提升中的应用。政府强化国产网络安全品研发支持。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SMBC调研洞察 -->
+        <section id="survey" class="section fade-in">
+            <h2 class="section-title">SMBC调研洞察</h2>
+            <p class="section-subtitle">
+                2025年10-11月实施，439家企业有效回答，聚焦美国关税措施及国内政治形势影响。
+            </p>
+            
+            <div class="grid grid-4 mb-lg">
+                <div class="stat-card fade-in">
+                    <div class="stat-value">439</div>
+                    <div class="stat-label">有效回答企业数</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-value">57%</div>
+                    <div class="stat-label">认为关税无影响或影响不明</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-value">28%</div>
+                    <div class="stat-label">认为2026年经济将改善</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-value">49%</div>
+                    <div class="stat-label">需求设备投资资金支援</div>
+                </div>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card fade-in">
+                    <h3 class="focus-title mb-md">美国关税影响预期</h3>
+                    <ul class="styled-list">
+                        <li><strong>正面影响：</strong>美国业务竞争环境改善（23%）、新销售先获得（10%）</li>
+                        <li><strong>负面影响：</strong>对美出口减少（22%）、其他地区需求联动减少（12%）、调达成本增加（14%）</li>
+                        <li><strong>业绩影响：</strong>19%企业预计营业利益下滑10-30%</li>
+                        <li><strong>价格转嫁：</strong>37%企业正在探讨，11%已实施，转嫁程度以25-50%为主</li>
+                    </ul>
+                </div>
+                
+                <div class="card fade-in">
+                    <h3 class="focus-title mb-md">企业应对策略</h3>
+                    <ul class="styled-list">
+                        <li><strong>供应链调整：</strong>84%企业已实施或计划调整销售先，83%企业调整调达先</li>
+                        <li><strong>投资战略：</strong>19%企业探讨投资增额，14%计划推迟投资执行</li>
+                        <li><strong>最需支援：</strong>设备投资资金支援（49%）、关税相关信息更新（39%）、资金周转支援（34%）</li>
+                        <li><strong>景況感：</strong>43%认为2026年无影响，仅3%认为会恶化</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 总结 -->
+        <section class="section fade-in">
+            <h2 class="section-title">核心洞察</h2>
+            <div class="card" style="max-width: 900px; margin: 0 auto;">
+                <h3 class="focus-title mb-md text-center">2025-2026关键转折点</h3>
+                <ul class="styled-list">
+                    <li><strong>政治变革：</strong>高市新政权成立标志着日本进入新的政策周期，17个战略领域的重点投资将重塑产业格局</li>
+                    <li><strong>技术驱动：</strong>AI作为经济增长起爆剂，半导体、数据中心等相关产业链迎来历史性机遇</li>
+                    <li><strong>全球重构：</strong>美国关税政策、供应链调整、地缘政治紧张推动企业重新评估全球布局</li>
+                    <li><strong>结构转型：</strong>从需求不足转向供给不足，人手不足倒逼企业加速自动化与数字化转型</li>
+                    <li><strong>脱碳浪潮：</strong>CBAM与GX-ETS同步启动，环境规制成为企业战略核心考量</li>
+                    <li><strong>不确定性常态化：</strong>企业需建立更强韧性与灵活性，应对政策、市场、技术的快速变化</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p class="footer-text">株式会社三井住友銀行 | CA本部 企业调查部</p>
+        <p class="footer-text">本报告基于2025年12月发布的《2025年の回顧と2026年の展望》编制</p>
+        <p class="footer-text" style="margin-top: var(--space-md); font-size: 12px;">
+            免责声明：本资料仅为信息提供，不构成交易诱导。内容基于发布时可信资料编制，但不保证信息准确性与完整性。
+        </p>
+    </footer>
+
+    <script>
+        // 滚动动画
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // 导航栏滚动效果
+        let lastScroll = 0;
+        const nav = document.querySelector('.nav');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                nav.style.transform = 'translateY(0)';
+            } else if (currentScroll > lastScroll && currentScroll > 100) {
+                nav.style.transform = 'translateY(-100%)';
+            } else if (currentScroll < lastScroll) {
+                nav.style.transform = 'translateY(0)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>

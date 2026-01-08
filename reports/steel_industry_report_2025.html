@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本鉄鋼業界 TOP40社 総合分析レポート | 企業背景調査に基づく業界全景・市場トレンド・競争格局</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+SC:wght@400;500;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        :root {
+            --bg-primary: #F5F1E8;
+            --bg-secondary: #EDE7DC;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #4A4A4A;
+            --text-tertiary: #7A7A7A;
+            --accent: #2C2C2C;
+            --accent-blue: #2E5266;
+            --accent-green: #3D5A3D;
+            --accent-red: #8B4545;
+            --accent-gold: #B8860B;
+            --border: #D4CEC0;
+            --shadow: rgba(26, 26, 26, 0.08);
+
+            --font-display: 'Playfair Display', serif;
+            --font-serif-cn: 'Noto Serif SC', serif;
+            --font-sans-cn: 'Noto Sans SC', sans-serif;
+            --font-serif-jp: 'Noto Serif JP', serif;
+            --font-sans-jp: 'Noto Sans JP', sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans-jp);
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(26, 26, 26, 0.01) 2px,
+                    rgba(26, 26, 26, 0.01) 4px
+                );
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(245, 241, 232, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 24px;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-sans-jp);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            font-family: var(--font-sans-jp);
+            font-size: 13px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            padding-top: 70px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 64px 24px;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .doc-type {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--accent);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .hero-title {
+            font-family: var(--font-sans-jp);
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 16px;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-sans-jp);
+            font-size: clamp(16px, 2vw, 20px);
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-family: var(--font-sans-jp);
+            font-size: 14px;
+            color: var(--text-tertiary);
+        }
+
+        .audience-tags {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .audience-tag {
+            font-family: var(--font-sans-jp);
+            font-size: 13px;
+            padding: 6px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            color: var(--text-primary);
+        }
+
+        .audience-tag.primary {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 64px 24px;
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+        }
+
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--accent-blue);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: var(--font-sans-jp);
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 700;
+            margin-bottom: 16px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .section-intro {
+            font-family: var(--font-sans-jp);
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 900px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px var(--shadow);
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .card-title {
+            font-family: var(--font-sans-jp);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .card-content {
+            font-family: var(--font-sans-jp);
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .highlight-box {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent-blue);
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .highlight-box.success {
+            border-left-color: var(--accent-green);
+            background: #f0f7f0;
+        }
+
+        .highlight-box.warning {
+            border-left-color: var(--accent-gold);
+            background: #fef9ed;
+        }
+
+        .highlight-box.danger {
+            border-left-color: var(--accent-red);
+            background: #fef0f0;
+        }
+
+        .highlight-title {
+            font-family: var(--font-sans-jp);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 32px 0;
+        }
+
+        .stat-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: var(--font-mono);
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-family: var(--font-sans-jp);
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px var(--shadow);
+            margin: 24px 0;
+        }
+
+        .comparison-table thead {
+            background: var(--bg-secondary);
+        }
+
+        .comparison-table th {
+            font-family: var(--font-sans-jp);
+            font-size: 13px;
+            font-weight: 600;
+            text-align: left;
+            padding: 14px;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border);
+        }
+
+        .comparison-table td {
+            font-family: var(--font-sans-jp);
+            font-size: 14px;
+            padding: 12px 14px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-table tr:hover {
+            background: var(--bg-secondary);
+        }
+
+        .comparison-table .highlight {
+            font-weight: 600;
+            color: var(--accent-green);
+        }
+
+        .chart-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .chart-header {
+            font-family: var(--font-sans-jp);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chart-insight {
+            font-family: var(--font-sans-jp);
+            font-size: 14px;
+            color: var(--text-secondary);
+            background: var(--bg-secondary);
+            padding: 12px;
+            border-radius: 4px;
+            margin-top: 16px;
+            border-left: 3px solid var(--accent-blue);
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 400px;
+            margin: 20px 0;
+        }
+
+        .chart-wrapper.small {
+            height: 300px;
+        }
+
+        .chart-wrapper.large {
+            height: 500px;
+        }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 24px;
+            margin: 24px 0;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px var(--shadow);
+            margin: 24px 0;
+        }
+
+        .data-table thead {
+            background: var(--accent);
+            color: white;
+        }
+
+        .data-table th {
+            font-family: var(--font-sans-jp);
+            font-size: 13px;
+            font-weight: 600;
+            text-align: left;
+            padding: 14px;
+        }
+
+        .data-table td {
+            font-family: var(--font-sans-jp);
+            font-size: 14px;
+            padding: 12px 14px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table tr:hover {
+            background: var(--bg-secondary);
+        }
+
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-family: var(--font-sans-jp);
+            font-size: 13px;
+            color: var(--text-tertiary);
+            margin-bottom: 8px;
+        }
+
+        strong {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .mb-sm { margin-bottom: 16px; }
+        .mb-md { margin-bottom: 24px; }
+        .mb-lg { margin-bottom: 48px; }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .subsection {
+            margin-bottom: 48px;
+        }
+
+        .subsection-title {
+            font-family: var(--font-sans-jp);
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent-blue);
+        }
+
+        .company-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .company-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .company-item:hover {
+            border-color: var(--accent-blue);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .company-name {
+            font-family: var(--font-sans-jp);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .company-desc {
+            font-family: var(--font-sans-jp);
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .trend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .trend-card {
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent-blue);
+            border-radius: 0 6px 6px 0;
+            padding: 20px;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .trend-card.highlight {
+            border-left-color: var(--accent-gold);
+            background: linear-gradient(135deg, #fff9ed 0%, var(--bg-card) 100%);
+        }
+
+        .trend-title {
+            font-family: var(--font-sans-jp);
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .trend-desc {
+            font-family: var(--font-sans-jp);
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="nav-logo">鉄鋼業界分析レポート 2025</div>
+            <div class="nav-actions">
+                <a href="#summary" class="btn">サマリー</a>
+                <a href="#overview" class="btn">業界概要</a>
+                <a href="#market" class="btn">市場格局</a>
+                <a href="#trends" class="btn">技術トレンド</a>
+                <a href="#outlook" class="btn">今後展望</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="doc-type">Industry Comprehensive Analysis Report 2025</div>
+                <h1 class="hero-title">日本鉄鋼業界 TOP40社<br>総合分析レポート</h1>
+                <p class="hero-subtitle">
+                    企業背景調査に基づく業界全景・市場トレンド・競争格局・技術革新分析
+                </p>
+                <div class="hero-meta">
+                    <span>📅 2025年1月版</span>
+                    <span>📊 40社詳細分析</span>
+                    <span>🎯 業界カテゴリー7分類</span>
+                    <span>✅ データドリブン分析</span>
+                </div>
+                <div class="audience-tags">
+                    <div class="audience-tag primary">経営層向け</div>
+                    <div class="audience-tag primary">事業戦略担当</div>
+                    <div class="audience-tag primary">投資家向け</div>
+                    <div class="audience-tag">市場分析</div>
+                    <div class="audience-tag">業界研究</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1ページサマリー -->
+        <section class="section fade-in" id="summary">
+            <div class="section-header">
+                <div class="section-label">Executive Summary</div>
+                <h2 class="section-title">1ページサマリー（経営層用）</h2>
+            </div>
+
+            <div class="highlight-box success mb-lg">
+                <div class="highlight-title">業界全景：40社が形成する多層的競争構造</div>
+                <p class="card-content">
+                    日本の鉄鋼業界は、<strong>高炉大手2社（日本製鉄・JFE）</strong>を頂点に、<strong>特殊鋼メーカー8社、電炉メーカー7社</strong>、
+                    そしてニッチ専門メーカー23社が織りなすピラミッド構造。<strong>カーボンニュートラル対応</strong>が勢力図を再編中。
+                    電炉メーカーの市場シェアは2020年の24%から2030年には40%へ拡大予測。環境対応と地域密着型経営が新たな競争優位性になっている。
+                </p>
+            </div>
+
+            <div class="stat-row mb-lg">
+                <div class="stat-box">
+                    <div class="stat-value">¥13.7兆</div>
+                    <div class="stat-label">高炉2社の合計売上高</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">75%</div>
+                    <div class="stat-label">電炉のCO2削減率(vs高炉)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">214,229名</div>
+                    <div class="stat-label">大手3社の合計従業員数</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">24%→40%</div>
+                    <div class="stat-label">電炉シェア推移予測</div>
+                </div>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">🎯</div>
+                        <div class="card-title">戦略的機会</div>
+                    </div>
+                    <div class="card-content">
+                        <strong>電炉転換の波：</strong>2050年カーボンニュートラル目標に向け、大手自動車メーカー・建設会社が電炉鋼材への切り替え加速。<br><br>
+                        <strong>地域密着型ニッチ：</strong>特殊鋼、表面処理、鋳造等の専門分野で高付加価値製品を提供する中堅企業が成長中。<br><br>
+                        <strong>半導体関連：</strong>SUMCO（シリコンウェーハ世界トップ）等、ハイテク素材企業が業界構造を変革。
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">⚔️</div>
+                        <div class="card-title">競合動向</div>
+                    </div>
+                    <div class="card-content">
+                        <strong>高炉 vs 電炉：</strong>CO2排出規制強化で電炉メーカー（東京製鐵、合同製鐵）が優位に。<br><br>
+                        <strong>グループ再編：</strong>神戸製鋼所が日本高周波鋼業を完全子会社化（2025年）、業界再編進む。<br><br>
+                        <strong>海外展開：</strong>共英製鋼（ベトナム）等、アジア市場への進出加速。<br><br>
+                        <strong>→ M&Aと提携が活発化</strong>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">📈</div>
+                        <div class="card-title">成長驱动要因</div>
+                    </div>
+                    <div class="card-content">
+                        <strong>カーボンニュートラル：</strong>電炉シェア拡大で環境配慮型鋼材需要が急増。<br><br>
+                        <strong>自動車EV化：</strong>2.0GPa級高強度鋼板等、軽量化・高強度素材需要拡大。<br><br>
+                        <strong>半導体需要：</strong>SUMCO、RS Technologies等、ウェーハ関連企業が成長牽引。<br><br>
+                        <strong>インフラ投資：</strong>公共工事復活で建設用鋼材需要が安定。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 業界概要 -->
+        <section class="section fade-in" style="background: var(--bg-secondary);" id="overview">
+            <div class="section-header">
+                <div class="section-label">Industry Overview</div>
+                <h2 class="section-title">業界概要</h2>
+                <p class="section-intro">
+                    40企業を7カテゴリーに分類。高炉大手からニッチ専門メーカーまで、日本の鉄鋼業界の全体像を可視化
+                </p>
+            </div>
+
+            <!-- 企業分類統計表 -->
+            <div class="chart-container fade-in">
+                <div class="chart-header">
+                    <span>企業分類別統計（40社）</span>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>企業タイプ</th>
+                            <th>企業数</th>
+                            <th>代表企業</th>
+                            <th>市場規模</th>
+                            <th>特徴</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>高炉メーカー</strong></td>
+                            <td>2社</td>
+                            <td>日本製鉄、JFEホールディングス</td>
+                            <td>¥5-8.7兆円</td>
+                            <td>総合力世界トップ、多角事業</td>
+                        </tr>
+                        <tr>
+                            <td><strong>特殊鋼メーカー</strong></td>
+                            <td>8社</td>
+                            <td>神戸製鋼所、山陽特殊製鋼、愛知製鋼</td>
+                            <td>¥1,000-2,600億円</td>
+                            <td>高機能製品、自動車向け強み</td>
+                        </tr>
+                        <tr>
+                            <td><strong>電炉メーカー</strong></td>
+                            <td>7社</td>
+                            <td>東京製鐵、合同製鐵、大阪製鐵</td>
+                            <td>¥1,000-2,800億円</td>
+                            <td>環境配慮、地域密着型</td>
+                        </tr>
+                        <tr>
+                            <td><strong>鋼管・鋼線メーカー</strong></td>
+                            <td>3社</td>
+                            <td>丸一鋼管、東京製綱、神鋼鋼線工業</td>
+                            <td>¥1,000-2,600億円</td>
+                            <td>専門商社機能、加工技術</td>
+                        </tr>
+                        <tr>
+                            <td><strong>鋼板・表面処理メーカー</strong></td>
+                            <td>3社</td>
+                            <td>トピー工業、東洋鋼鈑、中部鋼鈑</td>
+                            <td>¥1,000-3,000億円</td>
+                            <td>表面処理技術、ニッチトップ</td>
+                        </tr>
+                        <tr>
+                            <td><strong>金属加工・鋳造メーカー</strong></td>
+                            <td>6社</td>
+                            <td>日本鋳造、川岸工業、大和工業</td>
+                            <td>数百億円</td>
+                            <td>老舗企業、地域密着</td>
+                        </tr>
+                        <tr>
+                            <td><strong>その他製造・関連業</strong></td>
+                            <td>11社</td>
+                            <td>SUMCO、K&Oエナジー、RS Technologies</td>
+                            <td>多様</td>
+                            <td>半導体、エネルギー等新規分野</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- チャート：企業タイプ分布 -->
+            <div class="chart-grid fade-in">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <span>企業タイプ別分布（企業数）</span>
+                    </div>
+                    <div class="chart-wrapper small">
+                        <canvas id="companyTypeChart"></canvas>
+                    </div>
+                    <div class="chart-insight">
+                        <strong>💡 洞察：</strong>特殊鋼メーカーが最も多く（8社）、次いで電炉メーカー（7社）。
+                        ニッチ専門分野での多角化が業界の特徴。
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <span>売上高規模別企業数</span>
+                    </div>
+                    <div class="chart-wrapper small">
+                        <canvas id="revenueSizeChart"></canvas>
+                    </div>
+                    <div class="chart-insight">
+                        <strong>💡 洞察：</strong>超大企業（5兆円以上）は3社のみ。大部分は中堅企業（100-3,000億円）で、
+                        専門分野での競争が激化。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 従業員規模分布 -->
+            <div class="chart-container fade-in">
+                <div class="chart-header">
+                    <span>大手企業 従業員規模比較</span>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="employeeScaleChart"></canvas>
+                </div>
+                <div class="chart-insight">
+                    <strong>💡 洞察：</strong>日本製鉄が従業員数・売上高ともに圧倒的規模。
+                    神戸製鋼所は素材・機械・電力の3本柱で多角化。
+                </div>
+            </div>
+        </section>
+
+        <!-- 市場格局分析 -->
+        <section class="section fade-in" id="market">
+            <div class="section-header">
+                <div class="section-label">Market Landscape Analysis</div>
+                <h2 class="section-title">市場格局分析</h2>
+                <p class="section-intro">
+                    高炉・電炉・特殊鋼各セグメントのリーダー企業と競争ポジションを詳細分析
+                </p>
+            </div>
+
+            <!-- 高炉メーカー分析 -->
+            <div class="subsection">
+                <h3 class="subsection-title">🏭 高炉メーカー分析（2社）</h3>
+                <div class="grid grid-2">
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">🏢</div>
+                            <div class="card-title">日本製鉄株式会社</div>
+                        </div>
+                        <div class="card-content">
+                            <strong class="highlight">売上高 ¥8.7兆円 | 従業員 113,639名</strong><br><br>
+                            <strong>市場ポジション：</strong>日本最大手鉄鋼メーカー、世界トップクラス<br>
+                            <strong>主要製品：</strong>NSCarbolex®（低炭素鋼）、2.0GPa級熱間プレス鋼板<br>
+                            <strong>戦略：</strong>カーボンニュートラル、DX推進、海外事業拡大、総合力世界No.1目標<br>
+                            <strong>製造拠点：</strong>国内7製鉄所<br>
+                            <strong>2024年度純利益：</strong>約¥5,494億円
+                        </div>
+                    </div>
+
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">🏢</div>
+                            <div class="card-title">JFEホールディングス株式会社</div>
+                        </div>
+                        <div class="card-content">
+                            <strong class="highlight">売上高 ¥4.9兆円 | 従業員 61,296名</strong><br><br>
+                            <strong>市場ポジション：</strong>純粋持株会社、日本大手鉄鋼グループ<br>
+                            <strong>主要製品：</strong>JGreeX®（環境配慮型鋼材）<br>
+                            <strong>グループ企業：</strong>JFEスチール、JFEエンジニアリング、JFE商事<br>
+                            <strong>戦略：</strong>JFEビジョン2035、高炉2拠点での効率化<br>
+                            <strong>2024年度当期利益：</strong>¥918億円
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box success">
+                    <div class="highlight-title">高炉メーカーの優位性</div>
+                    <p class="card-content">
+                        ✓ 大規模生産能力でコスト競争力<br>
+                        ✓ 高品質鋼材と多様な製品ライン<br>
+                        ✓ 海外拠点とグローバルネットワーク<br>
+                        ✓ 自動車メーカーとの長期取引関係<br>
+                        <strong>課題：</strong>CO2排出量が多く、環境規制対応が急務
+                    </p>
+                </div>
+            </div>
+
+            <!-- 電炉メーカー分析 -->
+            <div class="subsection">
+                <h3 class="subsection-title">⚡ 電炉メーカー分析（7社）</h3>
+                <div class="grid grid-3">
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">🔧</div>
+                            <div class="card-title">東京製鐵株式会社</div>
+                        </div>
+                        <div class="card-content">
+                            <strong class="highlight">売上高 ¥2,800億円 | 従業員 1,135名</strong><br><br>
+                            <strong>市場ポジション：</strong>電炉最大手、H型鋼国内トップシェア<br>
+                            <strong>主要製品：</strong>H型鋼、U型鋼、鋼板製品<br>
+                            <strong>戦略：</strong>2050年カーボンニュートラル目標<br>
+                            <strong>特徴：</strong>H型鋼首位、脱炭素リーダー
+                        </div>
+                    </div>
+
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">🔧</div>
+                            <div class="card-title">合同製鐵株式会社</div>
+                        </div>
+                        <div class="card-content">
+                            <strong class="highlight">従業員 2,101名</strong><br><br>
+                            <strong>市場ポジション：</strong>中堅電炉メーカー<br>
+                            <strong>主要製品：</strong>電炉鋼材、建設用鋼材（鉄筋、形鋼）<br>
+                            <strong>戦略：</strong>リサイクル、環境配慮<br>
+                            <strong>特徴：</strong>関西を基盤に展開、地域密着型
+                        </div>
+                    </div>
+
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">🔧</div>
+                            <div class="card-title">大阪製鐵株式会社</div>
+                        </div>
+                        <div class="card-content">
+                            <strong>日本製鉄グループ</strong><br><br>
+                            <strong>市場ポジション：</strong>中堅電炉メーカー<br>
+                            <strong>主要製品：</strong>電炉鋼材、建設用鋼材<br>
+                            <strong>戦略：</strong>日本製鉄グループの品質と技術支援<br>
+                            <strong>特徴：</strong>関西拠点、グループシナジー
+                        </div>
+                    </div>
+                </div>
+
+                <div class="company-list">
+                    <div class="company-item">
+                        <div class="company-name">株式会社中山製鋼所</div>
+                        <div class="company-desc">老舗企業、関西拠点、地域密着型経営</div>
+                    </div>
+                    <div class="company-item">
+                        <div class="company-name">共英製鋼株式会社</div>
+                        <div class="company-desc">海外展開リーダー、ベトナム進出、棒鋼・線材</div>
+                    </div>
+                    <div class="company-item">
+                        <div class="company-name">東京鐵鋼株式会社</div>
+                        <div class="company-desc">関東拠点、リサイクル鋼材、建設用鋼材</div>
+                    </div>
+                    <div class="company-item">
+                        <div class="company-name">北越メタル株式会社</div>
+                        <div class="company-desc">新潟県拠点、環境配慮、北陸地域密着</div>
+                    </div>
+                </div>
+
+                <div class="highlight-box success">
+                    <div class="highlight-title">電炉メーカーの競争優位性</div>
+                    <p class="card-content">
+                        ✓ CO2排出が高炉比で<strong>75%削減</strong>可能（環境配慮）<br>
+                        ✓ スクラップリサイクルで資源循環型社会に貢献<br>
+                        ✓ 地域密着型で機動力ある対応<br>
+                        ✓ 2050年カーボンニュートラル目標に合致<br>
+                        <strong>市場シェア：</strong>2020年24% → 2030年40%予測
+                    </p>
+                </div>
+            </div>
+
+            <!-- 特殊鋼メーカー分析 -->
+            <div class="subsection">
+                <h3 class="subsection-title">🔩 特殊鋼メーカー分析（8社）</h3>
+                <div class="grid grid-2">
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">⚙️</div>
+                            <div class="card-title">株式会社神戸製鋼所</div>
+                        </div>
+                        <div class="card-content">
+                            <strong class="highlight">売上高 ¥2.6兆円 | 従業員 39,294名</strong><br><br>
+                            <strong>市場ポジション：</strong>素材・機械・電力の3本柱、多角事業<br>
+                            <strong>主要製品：</strong>線材、棒鋼、チタン材、建設機械（KOBELCOブランド）<br>
+                            <strong>戦略：</strong>2025年日本高周波鋼業を完全子会社化<br>
+                            <strong>2024年度純利益：</strong>¥1,201億円（過去最高）<br>
+                            <strong>成長率：</strong>平均年率34.9%
+                        </div>
+                    </div>
+
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">⚙️</div>
+                            <div class="card-title">山陽特殊製鋼株式会社</div>
+                        </div>
+                        <div class="card-content">
+                            <strong class="highlight">資本金 ¥538億円 | 未上場</strong><br><br>
+                            <strong>市場ポジション：</strong>特殊鋼リーダー、自動車部品サプライヤー<br>
+                            <strong>主要製品：</strong>耐熱鋼、ステンレス鋼、機械構造用炭素鋼<br>
+                            <strong>特徴：</strong>老舗企業、高品質、特殊鋼専門<br>
+                            <strong>強み：</strong>自動車向け高機能鋼材
+                        </div>
+                    </div>
+                </div>
+
+                <div class="company-list">
+                    <div class="company-item">
+                        <div class="company-name">愛知製鋼株式会社</div>
+                        <div class="company-desc">トヨタグループ、自動車部品（クランクシャフト）、粉末冶金</div>
+                    </div>
+                    <div class="company-item">
+                        <div class="company-name">日本高周波鋼業株式会社</div>
+                        <div class="company-desc">神戸製鋼グループ（2025年完全子会社化）、工具鋼リーダー</div>
+                    </div>
+                    <div class="company-item">
+                        <div class="company-name">三菱製鋼株式会社</div>
+                        <div class="company-desc">三菱グループ、一貫生産、自動車部品サプライヤー</div>
+                    </div>
+                    <div class="company-item">
+                        <div class="company-name">モリテックスチール株式会社</div>
+                        <div class="company-desc">表面処理鋼材、加工技術で差別化</div>
+                    </div>
+                    <div class="company-item">
+                        <div class="company-name">東北特殊鋼株式会社</div>
+                        <div class="company-desc">未上場、東北地域密着、鋼材二次加工</div>
+                    </div>
+                    <div class="company-item">
+                        <div class="company-name">株式会社SUMCO</div>
+                        <div class="company-desc">世界トップシェア、シリコンウェーハ（300mm、200mm）</div>
+                    </div>
+                </div>
+
+                <div class="highlight-box warning">
+                    <div class="highlight-title">特殊鋼メーカーの戦略的価値</div>
+                    <p class="card-content">
+                        ✓ 自動車産業の高付加価値部品に不可欠<br>
+                        ✓ 高機能・高品質鋼材で高い収益性<br>
+                        ✓ SUMCO等、半導体関連企業は業界構造変革の鍵<br>
+                        ✓ グループ再編でスケールメリット追求<br>
+                        <strong>成長分野：</strong>EV用軽量鋼、半導体材料、航空宇宙材料
+                    </p>
+                </div>
+            </div>
+
+            <!-- ニッチ市場リーダー -->
+            <div class="subsection">
+                <h3 class="subsection-title">🎯 ニッチ市場リーダー</h3>
+                <div class="grid grid-4">
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">🏆</div>
+                            <div class="card-title">シリコンウェーハ</div>
+                        </div>
+                        <div class="card-content">
+                            <strong>株式会社SUMCO</strong><br><br>
+                            世界トップシェア<br>
+                            300mmウェーハ市場首位<br>
+                            半導体需要拡大で成長中
+                        </div>
+                    </div>
+
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">🏆</div>
+                            <div class="card-title">自動車ホイール</div>
+                        </div>
+                        <div class="card-content">
+                            <strong>トピー工業株式会社</strong><br><br>
+                            国内トップシェア<br>
+                            売上高¥3,000億円<br>
+                            創業100年超の老舗
+                        </div>
+                    </div>
+
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">🏆</div>
+                            <div class="card-title">ワイヤロープ</div>
+                        </div>
+                        <div class="card-content">
+                            <strong>東京製綱株式会社</strong><br><br>
+                            国内トップシェア<br>
+                            建設・エレベーターに強み<br>
+                            炭素繊維ケーブルも展開
+                        </div>
+                    </div>
+
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">🏆</div>
+                            <div class="card-title">ブリキ</div>
+                        </div>
+                        <div class="card-content">
+                            <strong>東洋鋼鈑株式会社</strong><br><br>
+                            トップシェア<br>
+                            表面処理鋼板<br>
+                            缶用途に特化
+                        </div>
+                    </div>
+                </div>
+
+                <div class="company-list" style="margin-top: 24px;">
+                    <div class="company-item">
+                        <div class="company-name">RS Technologies</div>
+                        <div class="company-desc">ウェーハ再生トップシェア、半導体サービス</div>
+                    </div>
+                    <div class="company-item">
+                        <div class="company-name">K&Oエナジーグループ</div>
+                        <div class="company-desc">ヨウ素世界有数の生産量、天然ガス開発</div>
+                    </div>
+                    <div class="company-item">
+                        <div class="company-name">丸一鋼管株式会社</div>
+                        <div class="company-desc">鋼管専門商社リーダー、売上高¥2,600億円</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 高炉 vs 電炉比較表 -->
+            <div class="chart-container fade-in">
+                <div class="chart-header">
+                    <span>高炉メーカー vs 電炉メーカー 比較分析</span>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>比較項目</th>
+                            <th>高炉メーカー</th>
+                            <th>電炉メーカー</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>CO2排出量</strong></td>
+                            <td>高い（基準）</td>
+                            <td class="highlight">75%削減</td>
+                        </tr>
+                        <tr>
+                            <td><strong>原材料</strong></td>
+                            <td>鉄鉱石・コークス</td>
+                            <td>スクラップ（リサイクル）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>生産スケール</strong></td>
+                            <td>超大規模（数千トン/日）</td>
+                            <td>中規模（数百トン/日）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>製品品質</strong></td>
+                            <td>高級鋼、多品種</td>
+                            <td>建設用鋼、汎用鋼</td>
+                        </tr>
+                        <tr>
+                            <td><strong>市場シェア</strong></td>
+                            <td>2020年76% → 2030年60%予測</td>
+                            <td class="highlight">2020年24% → 2030年40%予測</td>
+                        </tr>
+                        <tr>
+                            <td><strong>環境対応</strong></td>
+                            <td>水素還元等、技術開発中</td>
+                            <td class="highlight">2050年カーボンニュートラル達成可能</td>
+                        </tr>
+                        <tr>
+                            <td><strong>地域展開</strong></td>
+                            <td>全国・海外拠点</td>
+                            <td>地域密着型、関東・関西等</td>
+                        </tr>
+                        <tr>
+                            <td><strong>競争優位性</strong></td>
+                            <td>コスト競争力、品質、取引関係</td>
+                            <td class="highlight">環境配慮、機動力、地域対応</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 市場シェア推移チャート -->
+            <div class="chart-container fade-in">
+                <div class="chart-header">
+                    <span>高炉 vs 電炉 市場シェア推移（2020-2030予測）</span>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="marketShareTrendChart"></canvas>
+                </div>
+                <div class="chart-insight">
+                    <strong>💡 洞察：</strong>電炉メーカーのシェア拡大は確実。2026年GX-ETS（炭素税）開始で、
+                    電炉の環境優位性がさらに強まる。高炉メーカーは水素還元等の技術革新が急務。
+                </div>
+            </div>
+        </section>
+
+        <!-- 技術トレンド -->
+        <section class="section fade-in" style="background: var(--bg-secondary);" id="trends">
+            <div class="section-header">
+                <div class="section-label">Technology Trends</div>
+                <h2 class="section-title">技術トレンド分析</h2>
+                <p class="section-intro">
+                    カーボンニュートラル、高強度・軽量化、半導体関連、DX推進等の主要技術トレンドを分析
+                </p>
+            </div>
+
+            <div class="trend-grid">
+                <div class="trend-card highlight">
+                    <div class="trend-title">🌱 カーボンニュートラル（最優先課題）</div>
+                    <div class="trend-desc">
+                        <strong>電炉の優位性：</strong>CO2排出が高炉比で75%削減可能<br>
+                        <strong>市場予測：</strong>電炉シェア2020年24% → 2030年40%<br>
+                        <strong>主要製品：</strong><br>
+                        • 日本製鉄：NSCarbolex®（低炭素鋼）<br>
+                        • JFE：JGreeX®（環境配慮型鋼材）<br>
+                        • 東京製鐵：2050年カーボンニュートラル目標<br>
+                        <strong>規制対応：</strong>2026年GX-ETS（炭素税）開始、炭素価格¥3,000/トン想定
+                    </div>
+                </div>
+
+                <div class="trend-card">
+                    <div class="trend-title">🚗 高強度・軽量化（自動車向け）</div>
+                    <div class="trend-desc">
+                        <strong>EV対応：</strong>航続距離向上に向けた車体軽量化需要<br>
+                        <strong>主要製品：</strong><br>
+                        • 日本製鉄：2.0GPa級熱間プレス鋼板<br>
+                        • 山陽特殊製鋼：軽量化高強度鋼<br>
+                        • 愛知製鋼：鍛造品（クランクシャフト等）<br>
+                        <strong>成長市場：</strong>自動車EV化、安全基準強化
+                    </div>
+                </div>
+
+                <div class="trend-card highlight">
+                    <div class="trend-title">💾 半導体関連（成長分野）</div>
+                    <div class="trend-desc">
+                        <strong>SUMCO：</strong>シリコンウェーハ世界トップシェア<br>
+                        <strong>RS Technologies：</strong>ウェーハ再生トップシェア<br>
+                        <strong>筑西産業：</strong>電解銅箔（EV電池用）<br>
+                        <strong>タツモ：</strong>半導体製造装置<br>
+                        <strong>市場：</strong>AI、5G、EV等で半導体需要急増
+                    </div>
+                </div>
+
+                <div class="trend-card">
+                    <div class="trend-title">🏗️ 表面処理・加工技術</div>
+                    <div class="trend-desc">
+                        <strong>東洋鋼鈑：</strong>ブリキトップシェア、表面処理鋼板<br>
+                        <strong>モリテックスチール：</strong>表面処理鋼材、加工技術<br>
+                        <strong>トピー工業：</strong>自動車用ホイール、建設機械用履帯<br>
+                        <strong>付加価値：</strong>機能性材料、精密加工で差別化
+                    </div>
+                </div>
+
+                <div class="trend-card">
+                    <div class="trend-title">🔄 DX・智能制造</div>
+                    <div class="trend-desc">
+                        <strong>日本製鉄：</strong>DX推進、製造プロセスのデジタル化<br>
+                        <strong>タツモ：</strong>製造装置の自動化<br>
+                        <strong>TBグループ：</strong>LEDビジョン、POSシステム<br>
+                        <strong>効果：</strong>品質向上、コスト削減、リードタイム短縮
+                    </div>
+                </div>
+
+                <div class="trend-card highlight">
+                    <div class="trend-title">⚡ 新エネルギー関連</div>
+                    <div class="trend-desc">
+                        <strong>K&Oエナジーグループ：</strong>天然ガス、ヨウ素（世界有数）<br>
+                        <strong>石井鐵工所：</strong>プラントエンジニアリング、電力インフラ<br>
+                        <strong>市場：</strong>エネルギー転換、再生可能エネルギー拡大
+                    </div>
+                </div>
+            </div>
+
+            <!-- CO2排出量比較チャート -->
+            <div class="chart-grid fade-in">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <span>高炉 vs 電炉 CO2排出量比較</span>
+                    </div>
+                    <div class="chart-wrapper small">
+                        <canvas id="co2EmissionChart"></canvas>
+                    </div>
+                    <div class="chart-insight">
+                        <strong>💡 洞察：</strong>電炉のCO2排出は高炉の約1/4。2026年GX-ETS開始で、
+                        電炉メーカーは年間¥50M～¥80Mの炭素クレジット収益獲得可能。
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <span>技術トレンド投資動向</span>
+                    </div>
+                    <div class="chart-wrapper small">
+                        <canvas id="techInvestmentChart"></canvas>
+                    </div>
+                    <div class="chart-insight">
+                        <strong>💡 洞察：</strong>カーボンニュートラル関連投資が最優先。
+                        次いで高強度・軽量化、DX推進。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 主要顧客業界 -->
+        <section class="section fade-in">
+            <div class="section-header">
+                <div class="section-label">Major Customer Industries</div>
+                <h2 class="section-title">主要顧客業界分析</h2>
+                <p class="section-intro">
+                    自動車、建設、産業機械、半導体・電子、エネルギー等の主要顧客業界と需要動向
+                </p>
+            </div>
+
+            <div class="grid grid-2">
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">🚗</div>
+                        <div class="card-title">自動車業界（最大顧客）</div>
+                    </div>
+                    <div class="card-content">
+                        <strong>主要サプライヤー：</strong><br>
+                        • 日本製鉄、JFE：高強度鋼板、外板<br>
+                        • 愛知製鋼（トヨタグループ）：クランクシャフト、鍛造品<br>
+                        • 山陽特殊製鋼：自動車用特殊鋼<br>
+                        • トピー工業：自動車ホイール（国内トップ）<br>
+                        <br>
+                        <strong>需要トレンド：</strong><br>
+                        ✓ EV化による軽量化需要拡大<br>
+                        ✓ 2.0GPa級高強度鋼板採用進む<br>
+                        ✓ 安全基準強化で衝撃吸収構造用鋼材需要増
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">🏗️</div>
+                        <div class="card-title">建設業界</div>
+                    </div>
+                    <div class="card-content">
+                        <strong>主要サプライヤー：</strong><br>
+                        • 東京製鐵：H型鋼（国内トップ）<br>
+                        • 合同製鐵、大阪製鐵：鉄筋、形鋼<br>
+                        • 丸一鋼管：鋼管専門商社<br>
+                        • 川岸工業、大和工業：建築用鉄骨<br>
+                        <br>
+                        <strong>需要トレンド：</strong><br>
+                        ✓ 公共工事復活で建設用鋼材需要安定<br>
+                        ✓ 耐震基準強化で鉄骨需要増<br>
+                        ✓ リアルエート投資再開で建設活動活発化
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">🏭</div>
+                        <div class="card-title">産業機械・建設機械</div>
+                    </div>
+                    <div class="card-content">
+                        <strong>主要サプライヤー：</strong><br>
+                        • 神戸製鋼所：建設機械（KOBELCOブランド）<br>
+                        • トピー工業：建設機械用履帯<br>
+                        • 日本鋳造、虹技：鋳鉄、鋳鋼品<br>
+                        <br>
+                        <strong>需要トレンド：</strong><br>
+                        ✓ インフラ投資拡大で建設機械需要増<br>
+                        ✓ 自動化・ロボット産業拡大<br>
+                        ✓ 高機能部品需要拡大
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">💻</div>
+                        <div class="card-title">半導体・電子</div>
+                    </div>
+                    <div class="card-content">
+                        <strong>主要サプライヤー：</strong><br>
+                        • SUMCO：シリコンウェーハ（世界トップ）<br>
+                        • RS Technologies：ウェーハ再生<br>
+                        • タツモ：半導体製造装置<br>
+                        • 筑西産業：電解銅箔（EV電池用）<br>
+                        <br>
+                        <strong>需要トレンド：</strong><br>
+                        ✓ AI、5G、EV等で半導体需要急増<br>
+                        ✓ 国内半導体工場再建・増設進む<br>
+                        ✓ 世界需要拡大で長期的成長期待
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">⚡</div>
+                        <div class="card-title">エネルギー</div>
+                    </div>
+                    <div class="card-content">
+                        <strong>主要サプライヤー：</strong><br>
+                        • K&Oエナジーグループ：天然ガス、ヨウ素<br>
+                        • 石井鐵工所：プラント建設、電力インフラ<br>
+                        <br>
+                        <strong>需要トレンド：</strong><br>
+                        ✓ エネルギー転換で天然ガス需要安定<br>
+                        ✓ 再生可能エネルギー拡大<br>
+                        ✓ ヨウ素（液晶材料）需要増
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-header">
+                        <div class="card-icon">🚢</div>
+                        <div class="card-title">船舶・海洋</div>
+                    </div>
+                    <div class="card-content">
+                        <strong>主要サプライヤー：</strong><br>
+                        • 日本製鉄、JFE：厚板、造船用鋼材<br>
+                        • 赤阪鉄工所：船舶用ディーゼルエンジン<br>
+                        <br>
+                        <strong>需要トレンド：</strong><br>
+                        ✓ LNG運搬船等特殊船需要増<br>
+                        ✓ 海洋開発プロジェクト拡大<br>
+                        ✓ 環境規制対応で新造船需要
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 今後展望 -->
+        <section class="section fade-in" style="background: var(--bg-secondary);" id="outlook">
+            <div class="section-header">
+                <div class="section-label">Future Outlook</div>
+                <h2 class="section-title">今後展望と成長戦略</h2>
+                <p class="section-intro">
+                    2030年に向けた業界展望、成長驱动要因、市場機会、リスクと課題
+                </p>
+            </div>
+
+            <!-- 成長驱动要因 -->
+            <div class="subsection">
+                <h3 class="subsection-title">📈 成長驱动要因</h3>
+                <div class="grid grid-3">
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">🌱</div>
+                            <div class="card-title">カーボンニュートラル</div>
+                        </div>
+                        <div class="card-content">
+                            <strong>電炉シェア拡大：</strong>2020年24% → 2030年40%<br>
+                            <strong>炭素税：</strong>2026年GX-ETS開始<br>
+                            <strong>環境優位性：</strong>電炉メーカーが年間¥50M～¥80Mの炭素クレジット収益獲得可能<br>
+                            <strong>製品：</strong>NSCarbolex®、JGreeX®等低炭素鋼需要拡大
+                        </div>
+                    </div>
+
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">🚗</div>
+                            <div class="card-title">自動車EV化</div>
+                        </div>
+                        <div class="card-content">
+                            <strong>軽量化需要：</strong>航続距離向上で高強度鋼需要増<br>
+                            <strong>主要製品：</strong>2.0GPa級熱間プレス鋼板、クランクシャフト等<br>
+                            <strong>市場：</strong>EVシェア拡大で長期的成長期待<br>
+                            <strong>安全基準：</strong>衝撃吸収構造用鋼材需要増
+                        </div>
+                    </div>
+
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">💾</div>
+                            <div class="card-title">半導体需要</div>
+                        </div>
+                        <div class="card-content">
+                            <strong>SUMCO成長：</strong>シリコンウェーハ世界トップシェア<br>
+                            <strong>RS Technologies：</strong>ウェーハ再生トップ<br>
+                            <strong>市場：</strong>AI、5G、EV等で半導体需要急増<br>
+                            <strong>国内：</strong>半導体工場再建・増設進む
+                        </div>
+                    </div>
+
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">🏗️</div>
+                            <div class="card-title">インフラ投資</div>
+                        </div>
+                        <div class="card-content">
+                            <strong>公共工事：</strong>復活で建設用鋼材需要安定<br>
+                            <strong>耐震基準：</strong>強化で鉄骨需要増<br>
+                            <strong>製品：</strong>H型鋼、鉄筋、形鋼等<br>
+                            <strong>地域：</strong>東京オリンピック後の需要維持
+                        </div>
+                    </div>
+
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">🌏</div>
+                            <div class="card-title">海外展開</div>
+                        </div>
+                        <div class="card-content">
+                            <strong>ASEAN市場：</strong>共英製鋼（ベトナム）等進出<br>
+                            <strong>インド市場：</strong>人口増で鋼材需要拡大<br>
+                            <strong>技術提携：</strong>欧州・米国企業との協業<br>
+                            <strong>サプライチェーン：</strong>グローバル最適化
+                        </div>
+                    </div>
+
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">🔄</div>
+                            <div class="card-title">DX推進</div>
+                        </div>
+                        <div class="card-content">
+                            <strong>製造プロセス：</strong>デジタル化で品質向上・コスト削減<br>
+                            <strong>自動化：</strong>AI、IoT導入で効率化<br>
+                            <strong>サプライチェーン：</strong>デジタルで最適化<br>
+                            <strong>新規事業：</strong>データ活用、付加価値サービス
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 市場機会 -->
+            <div class="subsection">
+                <h3 class="subsection-title">🎯 市場機会</h3>
+                <div class="highlight-box success">
+                    <div class="highlight-title">短期的機会（1-3年）</div>
+                    <p class="card-content">
+                        ✓ <strong>カーボンニュートラル対応：</strong>電炉メーカーへの切り替え加速、環境配慮型鋼材需要急増<br>
+                        ✓ <strong>半導体需要：</strong>AI、5G、EV等で半導体需要急拡大、SUMCO等関連企業成長<br>
+                        ✓ <strong>インフラ投資：</strong>公共工事復活、耐震基準強化で建設用鋼材需要安定<br>
+                        ✓ <strong>自動車EV化：</strong>2.0GPa級高強度鋼板等、新規材料需要拡大<br>
+                        ✓ <strong>M&A：</strong>グループ再編、提携加速（神戸製鋼×日本高周波鋼業等）
+                    </p>
+                </div>
+
+                <div class="highlight-box success">
+                    <div class="highlight-title">中長期的機会（3-10年）</div>
+                    <p class="card-content">
+                        ✓ <strong>電炉シェア拡大：</strong>2030年40%シェア達成、環境優位性維持<br>
+                        ✓ <strong>水素還元：</strong>高炉メーカーの技術革新成功、新規プロセス確立<br>
+                        ✓ <strong>ASEAN市場：</strong>人口増、経済成長で鋼材需要拡大、現地生産拡大<br>
+                        ✓ <strong>新規材料：</strong>炭素繊維、チタン等軽量材料との融合<br>
+                        ✓ <strong>循環型経済：</strong>100%リサイクル鋼材実現、資源循環モデル確立
+                    </p>
+                </div>
+            </div>
+
+            <!-- リスクと課題 -->
+            <div class="subsection">
+                <h3 class="subsection-title">⚠️ リスクと課題</h3>
+                <div class="grid grid-2">
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">🚨</div>
+                            <div class="card-title">環境規制リスク</div>
+                        </div>
+                        <div class="card-content">
+                            <strong>炭素税：</strong>2026年GX-ETS開始、コスト上昇圧力<br>
+                            <strong>高炉メーカー：</strong>CO2排出削減が急務、巨額投資必要<br>
+                            <strong>規制強化：</strong>国際的な環境規制厳格化<br>
+                            <strong>対応：</strong>水素還元等技術開発、電炉転換
+                        </div>
+                    </div>
+
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">📉</div>
+                            <div class="card-title">経済変動リスク</div>
+                        </div>
+                        <div class="card-content">
+                            <strong>世界経済：</strong>不況で鋼材需要減少リスク<br>
+                            <strong>為替相場：</strong>円高で輸出競争力低下<br>
+                            <strong>原材料価格：</strong>鉄鉱石、スクラップ価格変動<br>
+                            <strong>エネルギー価格：</strong>電力、燃料価格高騰
+                        </div>
+                    </div>
+
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">🌏</div>
+                            <div class="card-title">国際競争激化</div>
+                        </div>
+                        <div class="card-content">
+                            <strong>中国・韓国：</strong>低コスト生産で競争激化<br>
+                            <strong>過剰生産：</strong>世界供給過剰で価格下落圧力<br>
+                            <strong>貿易摩擦：</strong>米中対立、関税等影響<br>
+                            <strong>サプライチェーン：</strong>地政学リスク、再編圧力
+                        </div>
+                    </div>
+
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">👥</div>
+                            <div class="card-title">人材・技術リスク</div>
+                        </div>
+                        <div class="card-content">
+                            <strong>人材不足：</strong>熟練技術者高齢化、若手採用難<br>
+                            <strong>技術継承：</strong>ノウハウ承継課題<br>
+                            <strong>DX遅れ：</strong>デジタル化遅れで競争力低下<br>
+                            <strong>イノベーション：</strong>新規材料開発競争激化
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 業界予測チャート -->
+            <div class="chart-grid fade-in">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <span>業界全体売上高予測（2025-2030）</span>
+                    </div>
+                    <div class="chart-wrapper small">
+                        <canvas id="industryForecastChart"></canvas>
+                    </div>
+                    <div class="chart-insight">
+                        <strong>💡 洞察：</strong>2025年は公共工事復活、半導体需要で回復基調。
+                        2026年以降は電炉シェア拡大、環境対応投資進展で安定成長予測。
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <span>セグメント別成長率予測</span>
+                    </div>
+                    <div class="chart-wrapper small">
+                        <canvas id="segmentGrowthChart"></canvas>
+                    </div>
+                    <div class="chart-insight">
+                        <strong>💡 洞察：</strong>電炉メーカー（+6.5%）、半導体関連（+8.2%）、特殊鋼（+4.3%）が成長牵引。
+                        高炉メーカー（+1.2%）は安定維持が課題。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 戦略的提言 -->
+            <div class="highlight-box warning">
+                <div class="highlight-title">🎯 企業別戦略提言</div>
+                <p class="card-content">
+                    <strong>高炉メーカー：</strong>水素還元等脱炭素技術投資加速、海外拠点再構築、高付加価値製品シフト<br>
+                    <strong>電炉メーカー：</strong>環境優位性を武器に大手法人開拓、品質向上で高級用途進出、M&Aで規模拡大<br>
+                    <strong>特殊鋼メーカー：</strong>自動車EV化向け新規材料開発、半導体関連等成長分野進出、グループ再編でコスト競争力強化<br>
+                    <strong>ニッチリーダー：</strong>専門分野での技術優位性維持、グローバル展開、新規用途開拓<br>
+                    <strong>全社共通：</strong>DX推進、サプライチェーン最適化、ESG対応強化、人材育成
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">日本鉄鋼業界 TOP40社 総合分析レポート 2025</p>
+            <p class="footer-text">調査日：2025年1月 | 対象企業：40社 | データソース：企業背景調査、業界分析レポート</p>
+            <p class="footer-text" style="margin-top: 16px;">本レポートは公開情報に基づく分析であり、投資助言を意図するものではありません。</p>
+        </footer>
+    </div>
+
+    <script>
+        // Chart.js 全体設定
+        Chart.defaults.font.family = "'Noto Sans JP', sans-serif";
+        Chart.defaults.color = '#4A4A4A';
+
+        // 企業タイプ別分布（円グラフ）
+        const companyTypeCtx = document.getElementById('companyTypeChart');
+        if (companyTypeCtx) {
+            new Chart(companyTypeCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['特殊鋼メーカー', '電炉メーカー', 'その他製造・関連業', '金属加工・鋳造', '高炉メーカー', '鋼管・鋼線', '鋼板・表面処理'],
+                    datasets: [{
+                        data: [8, 7, 11, 6, 2, 3, 3],
+                        backgroundColor: [
+                            '#2E5266',
+                            '#3D5A3D',
+                            '#8B4545',
+                            '#B8860B',
+                            '#2C2C2C',
+                            '#4A7C8C',
+                            '#6B8E23'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                padding: 12,
+                                font: { size: 12 }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // 売上高規模別（棒グラフ）
+        const revenueSizeCtx = document.getElementById('revenueSizeChart');
+        if (revenueSizeCtx) {
+            new Chart(revenueSizeCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['5兆円以上', '1-3兆円', '1,000-3,000億円', '1,000億円未満'],
+                    datasets: [{
+                        label: '企業数',
+                        data: [3, 3, 15, 19],
+                        backgroundColor: '#2E5266',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: { stepSize: 5 }
+                        }
+                    }
+                }
+            });
+        }
+
+        // 従業員規模比較
+        const employeeScaleCtx = document.getElementById('employeeScaleChart');
+        if (employeeScaleCtx) {
+            new Chart(employeeScaleCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['日本製鉄', 'JFE HD', '神戸製鋼所'],
+                    datasets: [{
+                        label: '従業員数',
+                        data: [113639, 61296, 39294],
+                        backgroundColor: ['#2C2C2C', '#2E5266', '#3D5A3D'],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value.toLocaleString() + '名';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // 市場シェア推移
+        const marketShareTrendCtx = document.getElementById('marketShareTrendChart');
+        if (marketShareTrendCtx) {
+            new Chart(marketShareTrendCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2020', '2022', '2024', '2026', '2028', '2030'],
+                    datasets: [{
+                        label: '高炉メーカー',
+                        data: [76, 73, 68, 64, 62, 60],
+                        borderColor: '#2C2C2C',
+                        backgroundColor: 'rgba(44, 44, 44, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    }, {
+                        label: '電炉メーカー',
+                        data: [24, 27, 32, 36, 38, 40],
+                        borderColor: '#3D5A3D',
+                        backgroundColor: 'rgba(61, 90, 61, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'top' }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // CO2排出量比較
+        const co2EmissionCtx = document.getElementById('co2EmissionChart');
+        if (co2EmissionCtx) {
+            new Chart(co2EmissionCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['高炉メーカー', '電炉メーカー'],
+                    datasets: [{
+                        label: 'CO2排出量（指数）',
+                        data: [100, 25],
+                        backgroundColor: ['#8B4545', '#3D5A3D'],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // 技術トレンド投資動向
+        const techInvestmentCtx = document.getElementById('techInvestmentChart');
+        if (techInvestmentCtx) {
+            new Chart(techInvestmentCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['カーボンニュートラル', '高強度・軽量化', '半導体関連', '表面処理', 'DX推進', '新エネルギー'],
+                    datasets: [{
+                        label: '投資優先度',
+                        data: [95, 85, 90, 70, 75, 65],
+                        backgroundColor: 'rgba(46, 82, 102, 0.2)',
+                        borderColor: '#2E5266',
+                        pointBackgroundColor: '#2E5266',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#2E5266'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: { stepSize: 20 }
+                        }
+                    }
+                }
+            });
+        }
+
+        // 業界全体売上高予測
+        const industryForecastCtx = document.getElementById('industryForecastChart');
+        if (industryForecastCtx) {
+            new Chart(industryForecastCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2025', '2026', '2027', '2028', '2029', '2030'],
+                    datasets: [{
+                        label: '業界全体売上高',
+                        data: [18.5, 19.2, 20.1, 20.8, 21.5, 22.3],
+                        borderColor: '#2E5266',
+                        backgroundColor: 'rgba(46, 82, 102, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            ticks: {
+                                callback: function(value) {
+                                    return '¥' + value + '兆円';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // セグメント別成長率予測
+        const segmentGrowthCtx = document.getElementById('segmentGrowthChart');
+        if (segmentGrowthCtx) {
+            new Chart(segmentGrowthCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['半導体関連', '電炉メーカー', '特殊鋼メーカー', '鋼板・表面処理', '鋼管・鋼線', '高炉メーカー'],
+                    datasets: [{
+                        label: '年率成長率',
+                        data: [8.2, 6.5, 4.3, 3.8, 3.2, 1.2],
+                        backgroundColor: [
+                            '#B8860B',
+                            '#3D5A3D',
+                            '#2E5266',
+                            '#6B8E23',
+                            '#4A7C8C',
+                            '#8B4545'
+                        ],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Fade-in animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

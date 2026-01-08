@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本郵政株式会社 | 企業背景調査レポート</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:wght@400;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* カラーシステム */
+            --bg-primary: #F5F1E8;
+            --bg-secondary: #EDE7DC;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #4A4A4A;
+            --text-tertiary: #7A7A7A;
+            --accent: #C41E3A;
+            --border: #D4CEC0;
+            --shadow: rgba(26, 26, 26, 0.08);
+
+            /* タイポグラフィ */
+            --font-display: 'Playfair Display', serif;
+            --font-serif: 'Noto Serif JP', serif;
+            --font-sans: 'Noto Sans JP', sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+
+            /* スペーシング */
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 32px;
+            --space-lg: 64px;
+            --space-xl: 96px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-serif);
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            line-height: 1.8;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        /* 紙のテクスチャ背景 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(26, 26, 26, 0.01) 2px,
+                    rgba(26, 26, 26, 0.01) 4px
+                );
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ナビゲーションバー */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(245, 241, 232, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: var(--space-sm) var(--space-md);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-md);
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 400;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* メインコンテナ */
+        .container {
+            position: relative;
+            z-index: 2;
+            padding-top: 80px;
+        }
+
+        .section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-md);
+        }
+
+        /* ヒーローセクション */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: var(--space-xl) var(--space-md);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 120px;
+            background: linear-gradient(to bottom, var(--border), transparent);
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 86px);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--space-md);
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-serif);
+            font-size: clamp(20px, 3vw, 28px);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+            font-weight: 400;
+        }
+
+        .hero-meta {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-tertiary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* セクションタイトル */
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 600;
+            margin-bottom: var(--space-lg);
+            text-align: center;
+            position: relative;
+            padding-bottom: var(--space-md);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .section-subtitle {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: var(--space-lg);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* カードシステム */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: var(--space-md);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px var(--shadow);
+        }
+
+        /* グリッドシステム */
+        .grid {
+            display: grid;
+            gap: var(--space-md);
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        /* タイムライン */
+        .timeline {
+            position: relative;
+            padding-left: var(--space-lg);
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -73px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--bg-primary);
+        }
+
+        .timeline-date {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: var(--space-xs);
+        }
+
+        .timeline-title {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+        }
+
+        .timeline-desc {
+            font-family: var(--font-sans);
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* フォーカスカード */
+        .focus-card {
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent);
+            padding: var(--space-md);
+            margin-bottom: var(--space-md);
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .focus-number {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+        }
+
+        .focus-title {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+        }
+
+        .focus-content {
+            font-family: var(--font-sans);
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* 業界カード */
+        .industry-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: var(--space-md);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px var(--shadow);
+            border-color: var(--accent);
+        }
+
+        .industry-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-mono);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: var(--space-sm);
+        }
+
+        .industry-name {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+        }
+
+        .industry-section {
+            margin-bottom: var(--space-sm);
+        }
+
+        .industry-label {
+            font-family: var(--font-sans);
+            font-size: 12px;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--space-xs);
+        }
+
+        .industry-text {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* 統計カード */
+        .stat-card {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: var(--space-md);
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: var(--font-mono);
+            font-size: 42px;
+            font-weight: 600;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: var(--space-xs);
+        }
+
+        .stat-label {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* 情報カード */
+        .info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: var(--space-md);
+        }
+
+        .info-label {
+            font-family: var(--font-sans);
+            font-size: 12px;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--space-xs);
+        }
+
+        .info-value {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .info-value small {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* 市場シェアバー */
+        .market-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: var(--space-md);
+        }
+
+        .market-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-sm);
+        }
+
+        .market-name {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .market-share {
+            font-family: var(--font-mono);
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .market-bar-wrapper {
+            height: 8px;
+            background: var(--bg-secondary);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+
+        .market-bar {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 100px;
+            transition: width 1s ease;
+        }
+
+        .market-bar-yamato {
+            background: linear-gradient(90deg, #FBC02D 0%, #F57F17 100%);
+        }
+
+        .market-bar-sagawa {
+            background: linear-gradient(90deg, #42A5F5 0%, #1565C0 100%);
+        }
+
+        .market-bar-japanpost {
+            background: linear-gradient(90deg, #C41E3A 0%, #8B0000 100%);
+        }
+
+        .market-volume {
+            margin-top: var(--space-sm);
+            font-family: var(--font-sans);
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+
+        /* タグ */
+        .tag-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: var(--space-md);
+        }
+
+        .tag-category-title {
+            font-family: var(--font-sans);
+            font-size: 12px;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--space-sm);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            font-family: var(--font-sans);
+            font-size: 13px;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            padding: 8px 14px;
+            border-radius: 100px;
+            font-weight: 500;
+        }
+
+        /* リストスタイル */
+        .styled-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .styled-list li {
+            font-family: var(--font-sans);
+            font-size: 15px;
+            color: var(--text-secondary);
+            padding-left: var(--space-md);
+            margin-bottom: var(--space-sm);
+            position: relative;
+        }
+
+        .styled-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* フッター */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: var(--space-lg) var(--space-md);
+            text-align: center;
+        }
+
+        .footer-text {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            color: var(--text-tertiary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-family: var(--font-sans);
+            font-size: 13px;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .section {
+                padding: var(--space-lg) var(--space-sm);
+            }
+
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: var(--space-md);
+            }
+
+            .timeline-item::before {
+                left: -41px;
+            }
+
+            .market-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-xs);
+            }
+        }
+
+        /* アニメーション */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ユーティリティ */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-sm { margin-bottom: var(--space-sm); }
+        .mb-md { margin-bottom: var(--space-md); }
+        .mb-lg { margin-bottom: var(--space-lg); }
+
+        .mt-sm { margin-top: var(--space-sm); }
+        .mt-md { margin-top: var(--space-md); }
+        .mt-lg { margin-top: var(--space-lg); }
+
+        strong {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- ナビゲーションバー -->
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="nav-logo">Japan Post Report</div>
+            <ul class="nav-links">
+                <li><a href="#basic">基本情報</a></li>
+                <li><a href="#business">事業概要</a></li>
+                <li><a href="#services">サービス</a></li>
+                <li><a href="#financial">財務</a></li>
+                <li><a href="#tags">企業タグ</a></li>
+                <li><a href="#market">市場地位</a></li>
+                <li><a href="#news">最新動向</a></li>
+                <li><a href="#summary">まとめ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- ヒーローセクション -->
+        <section class="hero">
+            <h1 class="hero-title">日本郵政株式会社</h1>
+            <p class="hero-subtitle">JAPAN POST HOLDINGS Co., Ltd.</p>
+            <div class="hero-meta">
+                企業背景調査レポート · 2025年1月7日
+            </div>
+        </section>
+
+        <!-- 基本情報 -->
+        <section id="basic" class="section fade-in">
+            <h2 class="section-title">基本情報</h2>
+            <p class="section-subtitle">
+                日本の社会インフラを支える最大級の物流・金融グループ
+            </p>
+
+            <div class="grid grid-4 mb-lg">
+                <div class="stat-card fade-in">
+                    <div class="stat-value">3.5兆円</div>
+                    <div class="stat-label">資本金</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-value">21.9万</div>
+                    <div class="stat-label">従業員数（連結）</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-value">2.4万</div>
+                    <div class="stat-label">郵便局数</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-value">21.6%</div>
+                    <div class="stat-label">宅配便市場シェア</div>
+                </div>
+            </div>
+
+            <div class="grid grid-2">
+                <div class="info-card fade-in">
+                    <div class="info-label">正式名称</div>
+                    <div class="info-value">日本郵政株式会社</div>
+                </div>
+                <div class="info-card fade-in">
+                    <div class="info-label">英文名</div>
+                    <div class="info-value">JAPAN POST HOLDINGS Co., Ltd.</div>
+                </div>
+                <div class="info-card fade-in">
+                    <div class="info-label">法人番号</div>
+                    <div class="info-value">5010001112697 <span style="color: var(--accent);">✓</span></div>
+                </div>
+                <div class="info-card fade-in">
+                    <div class="info-label">設立</div>
+                    <div class="info-value">2006年1月23日</div>
+                </div>
+                <div class="info-card fade-in">
+                    <div class="info-label">所在地</div>
+                    <div class="info-value">〒100-0004<br>東京都千代田区大手町二丁目3番1号</div>
+                </div>
+                <div class="info-card fade-in">
+                    <div class="info-label">代表者</div>
+                    <div class="info-value">増田 寛也<br><small>取締役兼代表執行役社長</small></div>
+                </div>
+                <div class="info-card fade-in">
+                    <div class="info-label">上場</div>
+                    <div class="info-value">東京証券取引所プライム市場<br><small>証券コード：6178</small></div>
+                </div>
+                <div class="info-card fade-in">
+                    <div class="info-label">URL</div>
+                    <div class="info-value">https://www.japanpost.jp/</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 事業概要 -->
+        <section id="business" class="section fade-in">
+            <h2 class="section-title">事業概要</h2>
+            <p class="section-subtitle">
+                全国約24,000の郵便局網を基盤に、郵便・物流・金融・保険の3事業を展開する持株会社
+            </p>
+
+            <div class="card mb-lg fade-in">
+                <p style="font-size: 17px; line-height: 2; color: var(--text-secondary); text-align: center;">
+                    日本の社会インフラとして、郵便・物流・金融・保険サービスを提供し、地域社会の発展に貢献する。
+                </p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">郵</div>
+                    <h4 class="industry-name">郵便・物流事業</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">運営会社</div>
+                        <div class="industry-text">日本郵便株式会社</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">資本金</div>
+                        <div class="industry-text">7,000億円</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">従業員数</div>
+                        <div class="industry-text">169,961名</div>
+                    </div>
+                </div>
+
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">銀</div>
+                    <h4 class="industry-name">銀行事業</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">運営会社</div>
+                        <div class="industry-text">株式会社ゆうちょ銀行</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">特徴</div>
+                        <div class="industry-text">全国最大級のATM網、貯金商品</div>
+                    </div>
+                </div>
+
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">保</div>
+                    <h4 class="industry-name">生命保険事業</h4>
+                    <div class="industry-section">
+                        <div class="industry-label">運営会社</div>
+                        <div class="industry-text">株式会社かんぽ生命保険</div>
+                    </div>
+                    <div class="industry-section">
+                        <div class="industry-label">特徴</div>
+                        <div class="industry-text">郵便局窓口での保険商品販売</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 製品・サービス -->
+        <section id="services" class="section fade-in">
+            <h2 class="section-title">製品・サービスライン</h2>
+
+            <div class="grid grid-2">
+                <div class="focus-card fade-in">
+                    <div class="focus-number">01</div>
+                    <div class="focus-title">郵便・物流サービス</div>
+                    <div class="focus-content">
+                        全国約24,000の郵便局網を活用した郵便配達、宅配便サービス。全国一律の料金設定、郵便局ネットワークによる地域カバー、ゆうパック、レターパック等の多様な配送サービスを提供。
+                    </div>
+                </div>
+
+                <div class="focus-card fade-in">
+                    <div class="focus-number">02</div>
+                    <div class="focus-title">金融・保険サービス</div>
+                    <div class="focus-content">
+                        ゆうちょ銀行による預金・送金・投資信託サービス、かんぽ生命による生命保険商品。全国最大級のATM網を展開し、地域密着型の金融サービスを提供。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 財務状況 -->
+        <section id="financial" class="section fade-in">
+            <h2 class="section-title">財務状況</h2>
+            <p class="section-subtitle">
+                2024年3月期 決算概要（連結）
+            </p>
+
+            <div class="card fade-in">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border);">
+                            <th style="padding: 16px; text-align: left; font-family: var(--font-sans); font-size: 12px; color: var(--text-tertiary); text-transform: uppercase;">項目</th>
+                            <th style="padding: 16px; text-align: right; font-family: var(--font-sans); font-size: 12px; color: var(--text-tertiary); text-transform: uppercase;">金額</th>
+                            <th style="padding: 16px; text-align: right; font-family: var(--font-sans); font-size: 12px; color: var(--text-tertiary); text-transform: uppercase;">前期比</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 16px;"><strong>経常収益</strong></td>
+                            <td style="padding: 16px; text-align: right; font-family: var(--font-mono);">11兆9,821億円</td>
+                            <td style="padding: 16px; text-align: right; color: #2E7D32; font-family: var(--font-mono);">+8,435億円</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 16px;"><strong>経常利益</strong></td>
+                            <td style="padding: 16px; text-align: right; font-family: var(--font-mono);">6,683億円</td>
+                            <td style="padding: 16px; text-align: right; color: #2E7D32; font-family: var(--font-mono);">+106億円</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 16px;"><strong>当期純利益</strong></td>
+                            <td style="padding: 16px; text-align: right; font-family: var(--font-mono);">1,425億円</td>
+                            <td style="padding: 16px; text-align: right; font-family: var(--font-mono);">—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size: 13px; color: var(--text-tertiary); margin-top: var(--space-sm); text-align: center;">※ データソース：有価証券報告書（Tier 1 - 最高信度）</p>
+        </section>
+
+        <!-- 企業タグ -->
+        <section id="tags" class="section fade-in">
+            <h2 class="section-title">企業タグ</h2>
+
+            <div class="grid grid-3">
+                <div class="tag-section fade-in">
+                    <div class="tag-category-title">規模</div>
+                    <div class="tags">
+                        <span class="tag">超大手企業</span>
+                        <span class="tag">従業員20万人超</span>
+                        <span class="tag">資本金3兆円超</span>
+                        <span class="tag">上場企業</span>
+                    </div>
+                </div>
+
+                <div class="tag-section fade-in">
+                    <div class="tag-category-title">特点</div>
+                    <div class="tags">
+                        <span class="tag">持株会社</span>
+                        <span class="tag">インフラ</span>
+                        <span class="tag">郵便</span>
+                        <span class="tag">物流</span>
+                        <span class="tag">金融</span>
+                        <span class="tag">保険</span>
+                        <span class="tag">公共企業</span>
+                        <span class="tag">民営化</span>
+                    </div>
+                </div>
+
+                <div class="tag-section fade-in">
+                    <div class="tag-category-title">定位</div>
+                    <div class="tags">
+                        <span class="tag">日本最大級郵便網</span>
+                        <span class="tag">市場第3位（宅配便）</span>
+                        <span class="tag">全国一律サービス</span>
+                        <span class="tag">地域密着型</span>
+                        <span class="tag">ソーシャルインパクト企業</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 市場地位 -->
+        <section id="market" class="section fade-in">
+            <h2 class="section-title">競合・市場ポジション</h2>
+            <p class="section-subtitle">
+                宅配便市場シェア（2023-2024年）・上位3社で約95%のシェアを占める寡占市場
+            </p>
+
+            <div class="grid" style="gap: var(--space-md);">
+                <div class="market-item fade-in">
+                    <div class="market-header">
+                        <span class="market-name">ヤマト運輸</span>
+                        <span class="market-share">48.2%</span>
+                    </div>
+                    <div class="market-bar-wrapper">
+                        <div class="market-bar market-bar-yamato" style="width: 48.2%;"></div>
+                    </div>
+                    <div class="market-volume">年間 196-235億個 / +2.5% ~ +4.0%</div>
+                </div>
+
+                <div class="market-item fade-in">
+                    <div class="market-header">
+                        <span class="market-name">佐川急便</span>
+                        <span class="market-share">28.4%</span>
+                    </div>
+                    <div class="market-bar-wrapper">
+                        <div class="market-bar market-bar-sagawa" style="width: 28.4%;"></div>
+                    </div>
+                    <div class="market-volume">年間 127-140億個 / -4.1%</div>
+                </div>
+
+                <div class="market-item fade-in">
+                    <div class="market-header">
+                        <span class="market-name">日本郵便</span>
+                        <span class="market-share">21.6%</span>
+                    </div>
+                    <div class="market-bar-wrapper">
+                        <div class="market-bar market-bar-japanpost" style="width: 21.6%;"></div>
+                    </div>
+                    <div class="market-volume">年間 101-101億個 / +4.0%</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 最新動向 -->
+        <section id="news" class="section fade-in">
+            <h2 class="section-title">最新動向</h2>
+            <p class="section-subtitle">
+                2024-2025年の重要な出来事と戦略的取り組み
+            </p>
+
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2025年6月</div>
+                    <div class="timeline-title">ゆうID・ゆうゆうポイントサービス移管</div>
+                    <div class="timeline-desc">日本郵政ホールディングスへサービス統合。グループ全体のデジタル戦略を強化。</div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2025年</div>
+                    <div class="timeline-title">郵便集配拠点の統廃合計画発表</div>
+                    <div class="timeline-desc">2028年度までに約500拠点を統廃合。全国約3,000拠点の約20%に相当。都市部では跡地の活用を検討。</div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2024年6月</div>
+                    <div class="timeline-title">JPビジョン2025+発表</div>
+                    <div class="timeline-desc">グループ全体の新コミュニケーション戦略。郵便局の期待感向上と価値創造を目指す。</div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2024年2月</div>
+                    <div class="timeline-title">JR東日本との連携強化</div>
+                    <div class="timeline-desc">次世代郵便局の研究開発で協業。人口動態を加味した店舗運営モデルを構築。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- まとめ -->
+        <section id="summary" class="section fade-in">
+            <h2 class="section-title">まとめ</h2>
+            <div class="card" style="max-width: 900px; margin: 0 auto;">
+                <h3 class="focus-title mb-md text-center">日本郵政株式会社について</h3>
+                <p style="font-size: 16px; line-height: 2; color: var(--text-secondary); margin-bottom: var(--space-md); text-align: center;">
+                    日本郵政公社の民営化により2006年に設立された持株会社です。全国約24,000の郵便局網を基盤に、郵便・物流・金融・保険の3事業を展開する日本最大級のインフラ企業です。
+                </p>
+
+                <div class="grid grid-2 mb-md">
+                    <div>
+                        <h4 class="focus-title" style="font-size: 16px; margin-bottom: var(--space-sm);">強み</h4>
+                        <ul class="styled-list">
+                            <li>圧倒的な店舗網（全国24,000箇所）</li>
+                            <li>公的インフラとしての信頼性</li>
+                            <li>3事業のシナジー効果</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="focus-title" style="font-size: 16px; margin-bottom: var(--space-sm);">課題</h4>
+                        <ul class="styled-list">
+                            <li>宅配便市場での競争激化</li>
+                            <li>集配拠点の効率化</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p style="text-align: center; font-size: 15px; color: var(--text-primary); padding-top: var(--space-md); border-top: 1px solid var(--border);">
+                    <strong>市場地位：</strong>宅配便市場で第3位（約21%シェア）の地位を確立しています。
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <p class="footer-text">調査日：2025年1月7日</p>
+        <div class="footer-links">
+            <a href="https://www.japanpost.jp/" target="_blank">日本郵政公式サイト</a>
+            <a href="https://info.gbiz.go.jp/" target="_blank">gBizINFO</a>
+            <a href="https://www.houjin-bangou.nta.go.jp/" target="_blank">国税庁法人番号公表サイト</a>
+        </div>
+        <p class="footer-text" style="margin-top: var(--space-md); font-size: 12px;">
+            ※ 本レポートは公開情報を基に作成されており、情報の正確性を保証するものではありません。
+        </p>
+    </footer>
+
+    <script>
+        // スクロールアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // スムーズスクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ナビゲーションバーのスクロール効果
+        let lastScroll = 0;
+        const nav = document.querySelector('.nav');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll <= 0) {
+                nav.style.transform = 'translateY(0)';
+            } else if (currentScroll > lastScroll && currentScroll > 100) {
+                nav.style.transform = 'translateY(-100%)';
+            } else if (currentScroll < lastScroll) {
+                nav.style.transform = 'translateY(0)';
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
